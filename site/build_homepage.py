@@ -138,7 +138,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px;}
 .site-links a:hover{color:var(--green-900);}
 .site-links a:hover::after{right:0;}
 .site-brand{text-align:center;line-height:1;}
-.site-brand .w{display:block;color:var(--gold);font-size:11px;margin-bottom:3px;}
+.site-brand .w{display:flex;justify-content:center;margin-bottom:4px;}
 .site-brand .m{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.34em;color:var(--green-700);padding-left:.34em;}
 .site-brand .s{display:block;font-size:8.5px;letter-spacing:.46em;color:var(--gold);margin-top:5px;padding-left:.46em;}
 .site-actions{display:flex;gap:20px;justify-content:flex-end;align-items:center;color:var(--green-700);}
@@ -160,7 +160,7 @@ HEADER_HTML = f"""
 <header class="site-header">
   <div class="site-nav">
     <div class="site-links">{''.join(nav_links)}</div>
-    <a href="#top" class="site-brand"><span class="w">✦</span><span class="m">LIVV BITES</span><span class="s">GOURMET</span></a>
+    <a href="#top" class="site-brand"><span class="w"><svg viewBox="6 8 24 44" width="14" height="22" fill="none" stroke="#bfa063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 50 V22"/><path d="M18 22 C15.5 18.5 15.5 14.5 18 11 C20.5 14.5 20.5 18.5 18 22 Z"/><path d="M18 28 C14 26 11.5 24 10 20.5"/><path d="M18 28 C22 26 24.5 24 26 20.5"/><path d="M18 35 C14 33 11.5 31 10 27.5"/><path d="M18 35 C22 33 24.5 31 26 27.5"/><path d="M18 42 C14.5 40 12.5 38 11 35"/><path d="M18 42 C21.5 40 23.5 38 25 35"/></svg></span><span class="m">LIVV BITES</span><span class="s">GOURMET</span></a>
     <div class="site-actions">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -190,12 +190,16 @@ if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
 }
 """
 
+mark_svg = (SITE.parent / "brand/assets/logo/livv-bites-mark.svg").read_text()
+favicon_uri = "data:image/svg+xml;base64," + base64.b64encode(mark_svg.encode()).decode()
+
 html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LIVV BITES — Comfort food, thoughtfully made.</title>
+<link rel="icon" type="image/svg+xml" href="{favicon_uri}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />

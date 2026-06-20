@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 152" role="img" aria-label="LIVV BITES Gourmet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@600&display=swap');
+    .wm{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;}
+    .sub{font-family:'Inter',Helvetica,Arial,sans-serif;font-weight:600;}
+  </style>
+  <!-- wheat sprig -->
+  <g fill="none" stroke="#bfa063" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+     transform="translate(159,6) scale(0.62)">
+    <path d="M18 50 V22"/>
+    <path d="M18 22 C15.5 18.5 15.5 14.5 18 11 C20.5 14.5 20.5 18.5 18 22 Z"/>
+    <path d="M18 28 C14 26 11.5 24 10 20.5"/>
+    <path d="M18 28 C22 26 24.5 24 26 20.5"/>
+    <path d="M18 35 C14 33 11.5 31 10 27.5"/>
+    <path d="M18 35 C22 33 24.5 31 26 27.5"/>
+    <path d="M18 42 C14.5 40 12.5 38 11 35"/>
+    <path d="M18 42 C21.5 40 23.5 38 25 35"/>
+  </g>
+  <!-- wordmark -->
+  <text class="wm" x="174" y="100" text-anchor="middle" font-size="47" letter-spacing="11" fill="#22402f">LIVV BITES</text>
+  <text class="sub" x="175" y="128" text-anchor="middle" font-size="12" letter-spacing="11.5" fill="#bfa063">GOURMET</text>
+</svg>

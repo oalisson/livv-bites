@@ -14,7 +14,7 @@ Este documento traduz a direção visual **conceitual** do brand guide em valore
 |------|--------|----------|
 | Hex codes finais | 🟡 Proposto (alinhado ao packaging) | Design tokens, site, packaging |
 | Tipografia final | 🟡 Proposto (Cormorant Garamond + Inter) | CSS, design system |
-| Logo / logotipo | 🔴 **Precisa ser recriado** (mockup gerado, sem fonte/SVG original) | Header, favicon, OG image |
+| Logo / logotipo | ✅ **Feito** — SVG vetorial (wordmark + trigo) em `brand/assets/logo/`, integrado ao header + favicon | — |
 | Fatos de produto (ver §0.1) | ✅ Oficial — incorporado ao brand-guide | — |
 
 > Enquanto não houver aprovação, **tratar todos os valores deste arquivo como provisórios.** O site pode ser construído sobre eles e re-tematizado com um único ponto de troca (`design-tokens.json`).
@@ -45,7 +45,8 @@ Confirmados pelo fundador e incorporados ao [brand-guide.md](brand-guide.md) (Ke
 - **Descritor:** `GOURMET` abaixo, menor, mais espaçado
 - **Ornamento:** raminho de trigo dourado (`Soft Gold`) acima do wordmark
 - **Cor:** Forest Green sobre cream; versão clara (cream) sobre fundo verde
-- ⬜ **Falta:** arquivo vetorial (SVG/AI), favicon, OG image, versão monocromática
+- ✅ **Vetorizado:** `brand/assets/logo/livv-bites-logo.svg` (primary), `-logo-light.svg` (fundo escuro), `-mark.svg` (selo/favicon). Trigo desenhado como vetor; wordmark em Cormorant Garamond.
+- ⬜ **Falta (opcional):** OG image dedicada; versão do wordmark em paths (outline) para uso fora da web/print
 
 ---
 
