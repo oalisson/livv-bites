@@ -210,7 +210,22 @@ html = f"""<!DOCTYPE html>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LIVV BITES — Comfort food, thoughtfully made.</title>
+<meta name="description" content="Premium Brazilian cheese bread, naturally gluten-free and made with real ingredients. Frozen, baked fresh in minutes." />
 <link rel="icon" type="image/svg+xml" href="{favicon_uri}" />
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="LIVV BITES" />
+<meta property="og:title" content="LIVV BITES — Comfort food, thoughtfully made." />
+<meta property="og:description" content="Premium Brazilian cheese bread, naturally gluten-free and made with real ingredients. Frozen, baked fresh in minutes." />
+<meta property="og:url" content="https://oalisson.github.io/livv-bites/" />
+<meta property="og:image" content="https://oalisson.github.io/livv-bites/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="LIVV BITES — Brazilian cheese bread" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LIVV BITES — Comfort food, thoughtfully made." />
+<meta name="twitter:description" content="Premium Brazilian cheese bread, naturally gluten-free and made with real ingredients." />
+<meta name="twitter:image" content="https://oalisson.github.io/livv-bites/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
