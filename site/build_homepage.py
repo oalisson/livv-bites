@@ -154,6 +154,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px;}
   .site-menu{display:flex;}
   .site-menu svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;}
 }
+.test-banner{position:fixed;left:0;right:0;bottom:0;z-index:500;background:var(--gold);color:var(--green-900);text-align:center;font:600 12px/1.4 var(--sans);letter-spacing:.05em;padding:9px 16px;}
 """
 
 HEADER_HTML = f"""
@@ -189,6 +190,15 @@ if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
   const f=()=>{if(t)return;t=true;requestAnimationFrame(()=>{const vh=innerHeight;layers.forEach(img=>{const r=img.getBoundingClientRect();if(r.bottom>0&&r.top<vh){const p=(r.top+r.height/2-vh/2)/vh;img.style.transform=`translateY(${p*-24}px)`;}});t=false;});};
   addEventListener("scroll",f,{passive:true});addEventListener("resize",f);f();
 }
+// Stripe: ?test usa os Payment Links de teste; senão, os de produção
+(function(){
+  const test=new URLSearchParams(location.search).has("test");
+  document.querySelectorAll("a[data-stripe-live]").forEach(a=>{
+    const live=a.dataset.stripeLive,t=a.dataset.stripeTest;
+    a.href=(test&&t)?t:live;
+  });
+  if(test){const b=document.createElement("div");b.className="test-banner";b.textContent="🧪 TEST MODE — pagamentos não são reais · cartão 4242 4242 4242 4242";document.body.appendChild(b);}
+})();
 """
 
 mark_svg = (SITE.parent / "brand/assets/logo/livv-bites-mark.svg").read_text()

@@ -108,8 +108,12 @@
             <span class="price">$14<small>.00</small></span>
             <span class="ph">preço placeholder</span>
           </div>
-          <!-- 💳 troque href pelo Stripe Payment Link real (ver docs/STRIPE-SETUP.md) -->
-          <a class="buy" href="REPLACE_WITH_STRIPE_PAYMENT_LINK_TRADITIONAL" data-stripe-link>
+          <!-- 💳 troque pelos Stripe Payment Links reais (ver docs/STRIPE-SETUP.md).
+               LIVE = produção · TEST = modo de teste. Alterne com ?test na URL. -->
+          <a class="buy"
+             href="REPLACE_WITH_STRIPE_PAYMENT_LINK_TRADITIONAL_LIVE"
+             data-stripe-live="REPLACE_WITH_STRIPE_PAYMENT_LINK_TRADITIONAL_LIVE"
+             data-stripe-test="REPLACE_WITH_STRIPE_PAYMENT_LINK_TRADITIONAL_TEST">
             <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
             Buy now
           </a>
@@ -131,7 +135,10 @@
             <span class="price">$36<small>.00</small></span>
             <span class="ph">preço placeholder</span>
           </div>
-          <a class="buy" href="REPLACE_WITH_STRIPE_PAYMENT_LINK_BUNDLE" data-stripe-link>
+          <a class="buy"
+             href="REPLACE_WITH_STRIPE_PAYMENT_LINK_BUNDLE_LIVE"
+             data-stripe-live="REPLACE_WITH_STRIPE_PAYMENT_LINK_BUNDLE_LIVE"
+             data-stripe-test="REPLACE_WITH_STRIPE_PAYMENT_LINK_BUNDLE_TEST">
             <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
             Buy now
           </a>

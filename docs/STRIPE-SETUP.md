@@ -53,6 +53,39 @@ O site atualiza sozinho em ~1 min. **Pronto — vendendo.**
 
 ---
 
+## 🧪 Modo de teste (testar antes de ir ao vivo)
+
+O site já está preparado pra alternar entre **teste** e **produção** sem mexer no código:
+cada botão tem dois links (`data-stripe-live` e `data-stripe-test`).
+
+### Como gerar os links de teste
+1. No Stripe Dashboard, ligue o **Test mode** (chave no canto superior direito).
+2. Crie os produtos/preços de teste e os **Payment Links** (igual ao Passo 3, mas em
+   test mode → as URLs ficam `https://buy.stripe.com/test_xxxx`).
+3. Em [`site/shop-section.html`](../site/shop-section.html), cole nos atributos:
+   - `data-stripe-test="...test_..."` (link de teste)
+   - `data-stripe-live="...buy.stripe.com/..."` e `href="..."` (link de produção)
+4. `python3 site/build_homepage.py` + `git push`.
+
+### Como testar
+- Acesse o site com **`?test`** no fim da URL:
+  **https://oalisson.github.io/livv-bites/?test**
+- Aparece uma faixa **🧪 TEST MODE** embaixo, e os botões "Buy now" vão pro checkout de teste.
+- No checkout, pague com o **cartão de teste**:
+  - Número: `4242 4242 4242 4242`
+  - Validade: qualquer data futura · CVC: qualquer 3 dígitos · CEP: qualquer
+- Verifique no **Stripe (test mode)**: o pedido aparece em *Payments*, o e-mail de
+  recibo é enviado, e o endereço de entrega foi coletado.
+
+### Ir ao vivo
+- A URL **normal** (sem `?test`) já usa os links de produção. Nada mais a fazer —
+  quando os links live estiverem colados, o site real vende de verdade.
+
+> 💡 Dica: mande **https://oalisson.github.io/livv-bites/?test** pra equipe testar o
+> fluxo à vontade, sem risco de cobrança real.
+
+---
+
 ## Notas
 - **Assinatura ("Subscribe & save"):** dá pra fazer com um Payment Link de preço
   *recurring*. O texto já está no card como "em breve"; é só criar o link recorrente.
