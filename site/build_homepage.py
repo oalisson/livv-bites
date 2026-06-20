@@ -8,6 +8,7 @@ SITE = pathlib.Path(__file__).resolve().parent
 # (scope-name, arquivo, id-âncora, rótulo-nav)
 SECTIONS = [
     ("hero",    "hero-section.html",          "top",         None),
+    ("shop",    "shop-section.html",          "shop",        "Shop"),
     ("hiw",     "how-it-works-section.html",  "how-it-works","How it works"),
     ("ing",     "ingredients-section.html",   "ingredients", "Ingredients"),
     ("story",   "our-story-section.html",     "story",       "Our Story"),

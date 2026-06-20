@@ -39,7 +39,9 @@
       "Bash(python3 -c 'import sys,json; *)",
       "Bash(git commit -q -m 'Add devcontainer \\(Codespaces\\) + project README *)",
       "Bash(git push *)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(open \"https://oalisson.github.io/livv-bites/\")",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('/tmp/home-shop.png'\\); im.crop\\(\\(0,int\\(im.size[1]*0.055\\),im.size[0],int\\(im.size[1]*0.22\\)\\)\\).save\\('/tmp/shop-crop2.png'\\); print\\('ok'\\)\")"
     ]
   }
 }

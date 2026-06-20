@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — Shop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     LIVV BITES — "Shop" (product cards → Stripe Checkout)
+     Tokens from brand/design-tokens.json (placeholder)
+
+     💳 PAGAMENTO: cada botão "Buy" usa um Stripe Payment Link.
+        Troque os href="REPLACE_..." pelos links reais do Stripe.
+        Passo a passo em docs/STRIPE-SETUP.md
+     ⚠️ Preços e ratings são PLACEHOLDER até o catálogo ser definido.
+     ============================================================ */
+  :root{
+    --green-900:#122019; --green-800:#173124; --green-700:#1d3a2b;
+    --green-600:#22402f; --green-400:#577061; --green-300:#88a091;
+    --cream:#f4eee0; --cream-deep:#ece2cf; --beige:#efe6d2; --beige-deep:#e2d6bc;
+    --gold:#bfa063; --gold-soft:#d8c79a; --wood:#a9794f;
+    --text:#22302a; --muted:#6e6657; --border:#dbd0bb;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Inter", system-ui, sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .shop{ position:relative; padding:clamp(72px,11vh,150px) 0; background:radial-gradient(90% 60% at 50% -10%, rgba(191,160,99,.10), transparent 55%), var(--cream); }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(24px,5vw,72px); }
+
+  .shop-head{ text-align:center; max-width:640px; margin:0 auto clamp(48px,7vh,80px); }
+  .kicker{ display:inline-flex; align-items:center; gap:12px; margin-bottom:22px; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--green-600); font-weight:600; }
+  .kicker::before,.kicker::after{ content:""; width:28px; height:1px; background:var(--gold); }
+  .shop-head h2{ font-family:var(--serif); font-weight:500; font-size:clamp(38px,5.2vw,68px); line-height:1.02; letter-spacing:-.01em; color:var(--green-700); }
+  .shop-head h2 em{ font-style:italic; color:var(--gold); }
+  .shop-head p{ margin-top:16px; font-size:16.5px; line-height:1.65; color:var(--muted); }
+  .ship-note{ margin-top:18px; display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:var(--green-700); }
+  .ship-note svg{ width:16px; height:16px; stroke:var(--gold); fill:none; stroke-width:1.7; }
+
+  .shop-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(20px,2.5vw,32px); max-width:840px; margin:0 auto; }
+  .product{ background:var(--surface,#fff); border:1px solid var(--border); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 1px 2px rgba(18,32,25,.05); transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
+  .product:hover{ transform:translateY(-6px); box-shadow:0 22px 46px -24px rgba(18,32,25,.4); }
+  .product .pic{ position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--beige); }
+  .product .pic img{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+  .product:hover .pic img{ transform:scale(1.05); }
+  .badge{ position:absolute; top:14px; left:14px; background:var(--gold); color:var(--green-900); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:6px 11px; border-radius:999px; }
+
+  .pbody{ padding:22px 22px 24px; display:flex; flex-direction:column; flex:1; }
+  .stars{ color:var(--gold); font-size:13px; letter-spacing:2px; }
+  .stars span{ color:var(--muted); font-size:12px; letter-spacing:0; margin-left:6px; }
+  .product h3{ font-family:var(--serif); font-weight:600; font-size:25px; color:var(--green-700); margin:8px 0 4px; }
+  .product .meta{ font-size:13px; color:var(--muted); }
+  .price-row{ display:flex; align-items:baseline; gap:10px; margin:16px 0 18px; }
+  .price{ font-family:var(--serif); font-size:28px; font-weight:600; color:var(--green-700); }
+  .price small{ font-family:var(--sans); font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.04em; }
+  .ph{ font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--wood); border:1px dashed var(--border); border-radius:5px; padding:2px 6px; }
+
+  .buy{ margin-top:auto; display:flex; align-items:center; justify-content:center; gap:10px; background:var(--green-600); color:var(--cream); font-size:13px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; padding:15px 22px; border-radius:999px; transition:background .35s var(--ease), transform .35s var(--ease); }
+  .buy:hover{ background:var(--green-800); transform:translateY(-2px); }
+  .buy svg{ width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; }
+  .sub-note{ margin-top:12px; text-align:center; font-size:12px; color:var(--muted); }
+  .sub-note b{ color:var(--green-700); }
+
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (max-width:720px){ .shop-grid{ grid-template-columns:1fr; max-width:380px; } }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;} .reveal{opacity:1;transform:none;} }
+</style>
+</head>
+<body>
+
+<section class="shop">
+  <div class="wrap">
+
+    <div class="shop-head reveal in">
+      <span class="kicker">Shop</span>
+      <h2>Bring comfort<br><em>home.</em></h2>
+      <p>Frozen, baked fresh in minutes. Keep a bag ready for slow mornings and shared tables.</p>
+      <div class="ship-note"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>Free shipping over $59</div>
+    </div>
+
+    <div class="shop-grid">
+
+      <!-- PRODUTO 1 — Traditional 12-pack -->
+      <article class="product reveal">
+        <div class="pic">
+          <span class="badge">Best Seller</span>
+          <img src="assets/lifestyle/packaging-traditional.jpg" alt="LIVV BITES Brazilian Cheese Bread — Traditional, 12 pieces" loading="lazy" />
+        </div>
+        <div class="pbody">
+          <div class="stars">★★★★★ <span>(placeholder)</span></div>
+          <h3>Brazilian Cheese Bread</h3>
+          <div class="meta">Traditional · 12 pieces · 13 oz (370 g)</div>
+          <div class="price-row">
+            <span class="price">$14<small>.00</small></span>
+            <span class="ph">preço placeholder</span>
+          </div>
+          <!-- 💳 troque href pelo Stripe Payment Link real (ver docs/STRIPE-SETUP.md) -->
+          <a class="buy" href="REPLACE_WITH_STRIPE_PAYMENT_LINK_TRADITIONAL" data-stripe-link>
+            <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Buy now
+          </a>
+          <div class="sub-note"><b>Subscribe &amp; save 15%</b> · cancel anytime <span class="ph" style="margin-left:4px">em breve</span></div>
+        </div>
+      </article>
+
+      <!-- PRODUTO 2 — Bundle / variety (placeholder) -->
+      <article class="product reveal">
+        <div class="pic">
+          <span class="badge" style="background:var(--green-600);color:var(--gold-soft)">Bundle</span>
+          <img src="assets/lifestyle/pao-espresso-topdown.jpg" alt="LIVV BITES bundle — multiple bags" loading="lazy" />
+        </div>
+        <div class="pbody">
+          <div class="stars">★★★★★ <span>(placeholder)</span></div>
+          <h3>The Comfort Box</h3>
+          <div class="meta">3 bags · 36 pieces · best value</div>
+          <div class="price-row">
+            <span class="price">$36<small>.00</small></span>
+            <span class="ph">preço placeholder</span>
+          </div>
+          <a class="buy" href="REPLACE_WITH_STRIPE_PAYMENT_LINK_BUNDLE" data-stripe-link>
+            <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Buy now
+          </a>
+          <div class="sub-note">Free shipping included <span class="ph" style="margin-left:4px">a confirmar</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll(".reveal:not(.in)").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
