@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — Footer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     LIVV BITES — Footer (Editorial Multi-column)
+     Tokens from brand/design-tokens.json (placeholder)
+     NOTE: nav links / payment methods are placeholders.
+     ============================================================ */
+  :root{
+    --green-900:#122019; --green-800:#173124; --green-700:#1d3a2b;
+    --green-600:#22402f; --green-400:#577061; --green-300:#88a091;
+    --cream:#f4eee0; --cream-deep:#ece2cf; --beige:#efe6d2; --beige-deep:#e2d6bc;
+    --gold:#bfa063; --gold-soft:#d8c79a; --wood:#a9794f;
+    --text:#22302a; --muted:#6e6657; --border:#dbd0bb;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Inter", system-ui, sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --line:rgba(244,238,224,.14);
+    --dim:rgba(244,238,224,.66);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--green-900); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+
+  footer{
+    position:relative; color:var(--cream); overflow:hidden;
+    background:radial-gradient(70% 60% at 85% 0%, rgba(191,160,99,.12), transparent 55%), var(--green-900);
+  }
+  .wrap{ max-width:1280px; margin:0 auto; padding:0 clamp(24px,5vw,72px); }
+
+  /* ── Newsletter ── */
+  .news{
+    border-bottom:1px solid var(--line);
+    padding:clamp(48px,7vh,80px) 0;
+    display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,64px); align-items:center;
+  }
+  .news .lead .k{ font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-soft); font-weight:600; }
+  .news .lead h2{ font-family:var(--serif); font-weight:500; font-size:clamp(34px,4vw,52px); line-height:1.04; margin-top:12px; color:var(--cream); }
+  .news .lead h2 em{ font-style:italic; color:var(--gold-soft); }
+  .news .lead p{ margin-top:12px; font-size:15px; line-height:1.6; color:var(--dim); max-width:42ch; }
+
+  .form{ display:flex; gap:10px; flex-wrap:wrap; }
+  .form input{
+    flex:1; min-width:220px; background:rgba(244,238,224,.06); border:1px solid var(--line); color:var(--cream);
+    padding:16px 20px; border-radius:999px; font-family:var(--sans); font-size:15px; outline:none;
+    transition:border-color .3s var(--ease);
+  }
+  .form input::placeholder{ color:rgba(244,238,224,.5); }
+  .form input:focus{ border-color:var(--gold); }
+  .form button{
+    background:var(--cream); color:var(--green-800); border:none; cursor:pointer;
+    padding:16px 30px; border-radius:999px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+    transition:background .35s var(--ease), transform .35s var(--ease);
+  }
+  .form button:hover{ background:var(--gold-soft); transform:translateY(-2px); }
+  .form .fine{ width:100%; font-size:12px; color:rgba(244,238,224,.45); margin-top:4px; }
+
+  /* ── Columns ── */
+  .cols{
+    padding:clamp(48px,7vh,72px) 0 clamp(36px,5vh,48px);
+    display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:clamp(28px,4vw,56px);
+  }
+  .brandcol .wheat{ color:var(--gold); font-size:14px; }
+  .brandcol .mark{ font-family:var(--serif); font-size:27px; letter-spacing:.32em; color:var(--cream); display:block; margin-top:6px; padding-left:.32em; }
+  .brandcol .sub{ font-size:9px; letter-spacing:.46em; color:var(--gold); display:block; margin-top:7px; padding-left:.46em; }
+  .brandcol p{ margin-top:20px; font-size:14px; line-height:1.65; color:var(--dim); max-width:34ch; }
+
+  .socials{ display:flex; gap:12px; margin-top:24px; }
+  .socials a{
+    width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+    display:grid; place-items:center; transition:background .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+  }
+  .socials a:hover{ background:var(--gold); border-color:var(--gold); transform:translateY(-3px); }
+  .socials svg{ width:18px; height:18px; stroke:var(--cream); fill:none; stroke-width:1.6; }
+  .socials a:hover svg{ stroke:var(--green-900); }
+
+  .col h4{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-soft); font-weight:600; margin-bottom:18px; }
+  .col ul{ list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .col a{ font-size:14.5px; color:var(--dim); transition:color .25s var(--ease), padding-left .25s var(--ease); }
+  .col a:hover{ color:var(--cream); padding-left:5px; }
+
+  /* ── Seals ── */
+  .seals{ display:flex; flex-wrap:wrap; gap:14px 30px; padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .seal{ display:flex; align-items:center; gap:9px; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:var(--cream); }
+  .seal svg{ width:15px; height:15px; stroke:var(--gold-soft); fill:none; stroke-width:1.7; }
+
+  /* ── Bottom bar ── */
+  .bottom{ padding:24px 0 40px; display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between; }
+  .bottom .legal{ display:flex; flex-wrap:wrap; gap:8px 20px; font-size:12.5px; color:rgba(244,238,224,.55); }
+  .bottom .legal a:hover{ color:var(--cream); }
+  .pay{ display:flex; gap:8px; flex-wrap:wrap; }
+  .pay span{
+    height:26px; min-width:42px; padding:0 8px; border-radius:5px; background:rgba(244,238,224,.92);
+    display:grid; place-items:center; font-size:9px; font-weight:700; letter-spacing:.04em; color:var(--green-900);
+  }
+
+  @media (max-width:980px){
+    .news{ grid-template-columns:1fr; }
+    .cols{ grid-template-columns:1fr 1fr; gap:36px 28px; }
+    .brandcol{ grid-column:1 / -1; }
+  }
+  @media (max-width:560px){
+    .cols{ grid-template-columns:1fr 1fr; }
+    .bottom{ flex-direction:column; align-items:flex-start; }
+    .form input,.form button{ flex:1 1 100%; min-width:0; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;} }
+</style>
+</head>
+<body>
+
+<footer>
+  <div class="wrap">
+
+    <!-- Newsletter -->
+    <div class="news">
+      <div class="lead">
+        <span class="k">Join our table</span>
+        <h2>Slow mornings,<br><em>delivered.</em></h2>
+        <p>Recipes, new drops, and a little welcome treat for new subscribers. No spam — just good food.</p>
+      </div>
+      <form class="form" onsubmit="return false">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit">Subscribe</button>
+        <span class="fine">By subscribing you agree to our Privacy Policy.</span>
+      </form>
+    </div>
+
+    <!-- Columns -->
+    <div class="cols">
+      <div class="brandcol">
+        <span class="wheat">✦</span>
+        <span class="mark">LIVV BITES</span>
+        <span class="sub">GOURMET</span>
+        <p>Premium Brazilian cheese bread, thoughtfully made with real, recognizable ingredients. Woman-owned, small-batch.</p>
+        <div class="socials">
+          <a href="https://instagram.com/livv.bites" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15 4c.5 2.5 2 4 4.5 4.2"/><path d="M15 4v9.5a4.5 4.5 0 1 1-4-4.47"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 4h-2.5A3.5 3.5 0 0 0 9 7.5V10H7v3h2v7h3v-7h2.2l.8-3H12V7.7c0-.5.3-.7.8-.7H15V4Z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-3.3 17.4c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.2-.8 3.4-.2.9.5 1.7 1.5 1.7 1.8 0 3-2.3 3-5 0-2-1.4-3.6-4-3.6a4.6 4.6 0 0 0-4.8 4.6c0 .9.3 1.5.7 2 .2.2.2.3.1.5l-.2.9c-.1.3-.3.4-.6.2-1.1-.5-1.7-2-1.7-3.2C5.8 6.9 8 4 12.3 4c3.5 0 5.8 2.5 5.8 5.2 0 3.6-2 6.3-4.9 6.3-1 0-1.9-.5-2.2-1.1l-.6 2.3c-.2.8-.7 1.7-1.1 2.4A9 9 0 1 0 12 3Z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">All products</a></li>
+          <li><a href="#">Brazilian Cheese Bread</a></li>
+          <li><a href="#">Build a box</a></li>
+          <li><a href="#">Gift cards</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">What's inside</a></li>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Recipes &amp; FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Wholesale</a></li>
+          <li><a href="#">Shipping &amp; returns</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Seals -->
+    <div class="seals">
+      <span class="seal"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Gluten Free</span>
+      <span class="seal"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Clean Ingredients</span>
+      <span class="seal"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>No Artificial Preservatives</span>
+      <span class="seal"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Made in Small Batches</span>
+      <span class="seal"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Woman-Owned</span>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom">
+      <div class="legal">
+        <span>© 2026 LIVV BITES Gourmet</span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <!-- payment methods (placeholder representations) -->
+      <div class="pay">
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAL</span><span>SHOP</span><span>APPLE</span><span>GPAY</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

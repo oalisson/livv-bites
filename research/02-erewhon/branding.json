@@ -1,0 +1,92 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    { "family": "sharp_sansmedium", "role": "body" },
+    { "family": "sharp_sanssemibold", "role": "heading" },
+    { "family": "sharp_sansbold", "role": "heading" }
+  ],
+  "colors": {
+    "primary": "#191D48",
+    "secondary": "#F8D7DA",
+    "accent": "#721C24",
+    "background": "#FCFBF9",
+    "textPrimary": "#212121",
+    "link": "#721C24",
+    "cardBackground": "#F5F5F5",
+    "themeColor": "#000000"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "sharp_sansmedium",
+      "heading": "sharp_sanssemibold"
+    },
+    "fontStacks": {
+      "heading": ["sharp_sansbold", "Helvetica", "Arial", "sans-serif"],
+      "body": ["sharp_sansmedium", "Helvetica", "Arial", "sans-serif"],
+      "paragraph": ["sharp_sansmedium", "Helvetica", "Arial", "sans-serif"]
+    },
+    "fontSizes": {
+      "h1": "30px",
+      "h2": "13px",
+      "body": "12px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "3px"
+  },
+  "components": {
+    "input": {
+      "background": "transparent",
+      "textColor": "#212121",
+      "borderRadius": "0px",
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#FCFBF9",
+      "textColor": "#212121",
+      "borderRadius": "0px",
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#000000",
+      "textColor": "#FFFFFF",
+      "borderColor": "#000000",
+      "borderRadius": "3px",
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://ship.erewhon.com/cdn/shop/files/EREWHON-LOGO-WHT_2_abc6dd65-0c63-4e45-b3ad-37139e7df0d4.png?crop=center&height=31&v=1688690112&width=200",
+    "favicon": "https://ship.erewhon.com/cdn/shop/files/download.png?crop=center&height=32&v=1717270242&width=32",
+    "ogImage": "http://ship.erewhon.com/cdn/shop/files/Thursday_482a330b-6cf9-495e-824f-55cda25ec377.jpg?v=1781450701"
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "health-conscious consumers"
+  },
+  "brand": {
+    "name": "Erewhon",
+    "tagline": "Order Online & Ship Nationwide",
+    "mission": "Enhance the health of our community by providing organic, ethically-sourced foods that support our bodies and our planet",
+    "description": "More than a grocery store — a community of people united in love for pure products that protect the health of people and our planet",
+    "founded": "1960s",
+    "founders": "Aveline and Michio Kushi",
+    "origin": "Boston → Los Angeles",
+    "certifications": ["Certified Organic Retailer", "Registered B-Corp"]
+  },
+  "platform": {
+    "ecommerce": "Shopify",
+    "domain": "ship.erewhon.com",
+    "accessibility": "UserWay widget",
+    "payments": "Shopify Payments, Digital Wallet, Affirm (Buy Now Pay Later)",
+    "subscriptions": "ReCharge Payments"
+  },
+  "seo": {
+    "title": "Erewhon | Order Online & Ship Nationwide",
+    "meta_description": "Erewhon ships smoothie kits, wellness products, and organic pantry staples nationwide. Order online and ship to your door.",
+    "og_type": "website",
+    "twitter_card": "summary_large_image"
+  }
+}

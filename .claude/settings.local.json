@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open \"/Users/pedroneto/Livv Bites/site/ingredients-section.html\")",
+      "Bash(cp _staging/cand-8.jpeg cassava-starch.jpg)",
+      "Bash(cp _staging/cand-2.jpeg real-cheese.jpg)",
+      "Bash(cp _staging/cand-1.jpeg organic-eggs.jpg)",
+      "Bash(cp _staging/cand-9.jpeg olive-oil.jpg)",
+      "Bash(cp _staging/cand-4.jpeg comfort-table.jpg)",
+      "Bash(open \"/Users/pedroneto/Livv Bites/site/hero-tests.html\")",
+      "Bash(open \"/Users/pedroneto/Livv Bites/site/how-it-works-section.html\")",
+      "Bash(open \"/Users/pedroneto/Livv Bites/site/our-story-section.html\")",
+      "Bash(open \"/Users/pedroneto/Livv Bites/site/reviews-section.html\")",
+      "Bash(open \"/Users/pedroneto/Livv Bites/site/footer-section.html\")",
+      "Bash(python3 build_homepage.py)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,13000 --virtual-time-budget=3000 --screenshot=/tmp/home-debug-full.png file:///tmp/index-debug.html)",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('/tmp/home-debug-full.png'\\); print\\(im.size\\)\")",
+      "Bash(open index.html)",
+      "Bash(xargs -I{} echo \"index.html = {} \\(arquivo único, imagens embutidas\\)\")",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(netlify --version)",
+      "Bash(vercel --version)",
+      "Bash(npx --version)",
+      "Bash(python3 -c \"import PIL\")",
+      "Bash(pip3 install *)",
+      "Bash(python3 site/build_homepage.py)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Livv Bites: brand kit + homepage \\(hero, how it works, ingredients, our story, reviews, footer\\) *)"
+    ]
+  }
+}

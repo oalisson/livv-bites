@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — From freezer to table</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     LIVV BITES — "How it works" (From freezer to table)
+     Tokens from brand/design-tokens.json (placeholder)
+     ============================================================ */
+  :root{
+    --green-900:#122019; --green-800:#173124; --green-700:#1d3a2b;
+    --green-600:#22402f; --green-400:#577061; --green-300:#88a091;
+    --cream:#f4eee0; --cream-deep:#ece2cf; --beige:#efe6d2; --beige-deep:#e2d6bc;
+    --gold:#bfa063; --gold-soft:#d8c79a; --wood:#a9794f;
+    --text:#22302a; --muted:#6e6657; --border:#dbd0bb;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Inter", system-ui, sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .hiw{
+    position:relative;
+    padding:clamp(72px,11vh,150px) 0;
+    background:
+      radial-gradient(90% 60% at 50% -10%, rgba(191,160,99,.10), transparent 55%),
+      var(--beige);
+  }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(24px,5vw,72px); }
+
+  /* header */
+  .hiw-head{ text-align:center; max-width:640px; margin:0 auto clamp(56px,8vh,90px); }
+  .kicker{
+    display:inline-flex; align-items:center; gap:12px; margin-bottom:22px;
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--green-600); font-weight:600;
+  }
+  .kicker::before,.kicker::after{ content:""; width:28px; height:1px; background:var(--gold); }
+  .hiw-head h2{
+    font-family:var(--serif); font-weight:500; font-size:clamp(38px,5.2vw,68px);
+    line-height:1.02; letter-spacing:-.01em; color:var(--green-700);
+  }
+  .hiw-head h2 em{ font-style:italic; color:var(--gold); }
+  .hiw-head p{ margin-top:18px; font-size:17px; line-height:1.65; color:var(--muted); }
+
+  /* steps */
+  .steps{
+    list-style:none; display:grid; grid-template-columns:repeat(3,1fr);
+    gap:clamp(20px,3vw,36px); position:relative;
+  }
+  /* connecting dashed line behind the icons (desktop) */
+  .steps::before{
+    content:""; position:absolute; top:46px; left:16%; right:16%; height:1px; z-index:0;
+    background-image:linear-gradient(90deg,var(--beige-deep) 0 8px, transparent 8px 16px);
+    background-size:16px 1px;
+  }
+  .step{ position:relative; z-index:1; text-align:center; padding:0 8px; }
+  .step .badge{
+    width:92px; height:92px; margin:0 auto 26px; border-radius:50%;
+    background:var(--cream); border:1px solid var(--border);
+    display:grid; place-items:center; position:relative;
+    box-shadow:0 14px 34px -18px rgba(18,32,25,.4);
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease);
+  }
+  .step:hover .badge{ transform:translateY(-5px); box-shadow:0 22px 44px -18px rgba(18,32,25,.5); }
+  .step .badge svg{ width:38px; height:38px; stroke:var(--green-600); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  .step .badge .n{
+    position:absolute; top:-6px; right:-6px; width:28px; height:28px; border-radius:50%;
+    background:var(--green-600); color:var(--gold-soft); font-family:var(--serif); font-size:15px; font-weight:600;
+    display:grid; place-items:center;
+  }
+  .step h3{ font-family:var(--serif); font-weight:600; font-size:25px; color:var(--green-700); margin-bottom:10px; }
+  .step p{ font-size:15px; line-height:1.6; color:var(--muted); max-width:30ch; margin:0 auto; }
+  .step .detail{
+    display:inline-block; margin-top:16px; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    font-weight:600; color:var(--gold); border-top:1px solid var(--border); padding-top:12px;
+  }
+
+  /* cooking methods */
+  .methods{
+    margin-top:clamp(48px,7vh,80px); display:flex; flex-wrap:wrap; justify-content:center; gap:16px;
+  }
+  .method{
+    display:flex; align-items:center; gap:12px;
+    background:var(--cream); border:1px solid var(--border); border-radius:999px;
+    padding:13px 24px; font-size:13px; color:var(--text);
+  }
+  .method svg{ width:18px; height:18px; stroke:var(--green-600); fill:none; stroke-width:1.6; }
+  .method b{ color:var(--green-700); font-weight:600; }
+  .method .sep{ color:var(--border); }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(30px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in{ opacity:1; transform:none; }
+  .s2{ transition-delay:.12s; } .s3{ transition-delay:.24s; } .s4{ transition-delay:.36s; }
+
+  @media (max-width:820px){
+    .steps{ grid-template-columns:1fr; gap:44px; }
+    .steps::before{ display:none; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;}
+    .reveal{opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hiw">
+  <div class="wrap">
+
+    <div class="hiw-head reveal in">
+      <span class="kicker">So simple</span>
+      <h2>From freezer to table,<br><em>in minutes.</em></h2>
+      <p>No thawing, no fuss. Keep a bag in the freezer and you're three easy steps away from warm, golden Brazilian cheese bread.</p>
+    </div>
+
+    <ol class="steps">
+
+      <li class="step reveal s2">
+        <div class="badge">
+          <span class="n">1</span>
+          <!-- snowflake -->
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19M12 5l-2.5 2M12 5l2.5 2M12 19l-2.5-2M12 19l2.5-2M5 12l2-2.5M5 12l2 2.5M19 12l-2-2.5M19 12l-2 2.5"/></svg>
+        </div>
+        <h3>Keep it frozen</h3>
+        <p>Store in the freezer and bake straight from frozen — no thawing needed.</p>
+        <span class="detail">Keep at 0°F (−18°C)</span>
+      </li>
+
+      <li class="step reveal s3">
+        <div class="badge">
+          <span class="n">2</span>
+          <!-- flame / bake -->
+          <svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-1.5.6-2.5 1.3-3.3C10 9 11 7 12 3Z"/><path d="M12 21a6 6 0 0 1-6-6c0-1 .2-1.8.5-2.6"/><path d="M12 21a6 6 0 0 0 6-6c0-1-.2-1.8-.5-2.6"/></svg>
+        </div>
+        <h3>Bake or air fry</h3>
+        <p>Pop them in the oven or air fryer until puffed and golden brown.</p>
+        <span class="detail">350°F · 20–30 min</span>
+      </li>
+
+      <li class="step reveal s4">
+        <div class="badge">
+          <span class="n">3</span>
+          <!-- bowl + steam -->
+          <svg viewBox="0 0 24 24"><path d="M3 11h18a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8Z"/><path d="M9 3c-.6 1 .6 2 0 3M13 2.5c-.6 1 .6 2 0 3M17 3.5c-.6 1 .6 2 0 3"/></svg>
+        </div>
+        <h3>Enjoy warm</h3>
+        <p>Crisp outside, soft and pillowy inside — perfect with coffee, any time of day.</p>
+        <span class="detail">Best shared</span>
+      </li>
+
+    </ol>
+
+    <div class="methods reveal s4">
+      <span class="method">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg>
+        <b>Oven</b><span class="sep">·</span> 350°F · 25–30 min
+      </span>
+      <span class="method">
+        <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 7h8M9 11c1 1.5 5 1.5 6 0"/></svg>
+        <b>Air fryer</b><span class="sep">·</span> 350°F · 20–25 min
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.2});
+  document.querySelectorAll(".reveal:not(.in)").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

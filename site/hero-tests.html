@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — Hero · Mockups (3 testes)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --green-900:#122019; --green-800:#173124; --green-700:#1d3a2b;
+    --green-600:#22402f; --green-400:#577061; --green-300:#88a091;
+    --cream:#f4eee0; --cream-deep:#ece2cf; --beige:#efe6d2; --beige-deep:#e2d6bc;
+    --gold:#bfa063; --gold-soft:#d8c79a; --wood:#a9794f;
+    --text:#22302a; --muted:#6e6657; --border:#dbd0bb;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Inter", system-ui, sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+
+  /* ── test label ── */
+  .test-label{
+    background:var(--green-900); color:var(--cream);
+    padding:14px clamp(20px,5vw,72px); display:flex; align-items:baseline; gap:16px;
+    position:sticky; top:0; z-index:60;
+  }
+  .test-label .n{ font-family:var(--serif); font-size:22px; color:var(--gold-soft); }
+  .test-label .d{ font-size:12.5px; letter-spacing:.06em; color:var(--cream); opacity:.85; }
+  .test-label .d b{ color:var(--gold-soft); }
+
+  /* ── announce + header (static for the mockup) ── */
+  .announce{ background:var(--green-800); color:var(--cream); text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; padding:9px 16px; }
+  .announce b{ color:var(--gold-soft); }
+  .announce .dot{ color:var(--gold); margin:0 12px; }
+  .nav{ max-width:1280px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:70px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; border-bottom:1px solid var(--border); }
+  .links{ display:flex; gap:28px; font-size:13px; font-weight:500; color:var(--green-700); }
+  .brand{ text-align:center; line-height:1; }
+  .brand .mark{ font-family:var(--serif); font-weight:500; font-size:23px; letter-spacing:.34em; color:var(--green-700); padding-left:.34em; }
+  .brand .sub{ display:block; font-size:8px; letter-spacing:.46em; color:var(--gold); margin-top:5px; padding-left:.46em; }
+  .brand .wheat{ display:block; color:var(--gold); font-size:10px; margin-bottom:3px; }
+  .actions{ display:flex; gap:20px; justify-content:flex-end; color:var(--green-700); }
+  .actions svg{ width:19px; height:19px; stroke:currentColor; fill:none; stroke-width:1.6; }
+
+  /* ── hero ── */
+  .hero{ position:relative; overflow:hidden; background:radial-gradient(80% 70% at 12% 20%, rgba(191,160,99,.12), transparent 55%), var(--cream); }
+  .hero-grid{ max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1.02fr .98fr; align-items:center; min-height:660px; }
+  .hero-copy{ padding:clamp(40px,6vh,80px) clamp(24px,4vw,56px) clamp(40px,6vh,80px) clamp(24px,5vw,72px); }
+  .eyebrow{ display:inline-flex; align-items:center; gap:12px; margin-bottom:22px; font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--green-600); font-weight:600; }
+  .eyebrow::before{ content:""; width:30px; height:1px; background:var(--gold); }
+  .eyebrow span{ color:var(--gold); }
+  .hero h1{ font-family:var(--serif); font-weight:500; font-size:clamp(46px,6vw,82px); line-height:.98; letter-spacing:-.015em; color:var(--green-700); }
+  .hero h1 em{ font-style:italic; color:var(--gold); }
+  .lede{ margin-top:22px; font-size:17.5px; line-height:1.65; color:var(--muted); max-width:46ch; }
+  .lede strong{ color:var(--text); font-weight:600; }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+  .btn{ display:inline-flex; align-items:center; font-size:13px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; padding:15px 32px; border-radius:999px; }
+  .btn-primary{ background:var(--green-600); color:var(--cream); }
+  .btn-ghost{ background:transparent; color:var(--green-700); border:1px solid var(--green-600); }
+  .trust{ display:flex; flex-wrap:wrap; gap:10px 24px; margin-top:36px; padding-top:24px; border-top:1px solid var(--border); }
+  .trust span{ display:flex; align-items:center; gap:8px; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--green-700); }
+  .trust svg{ width:15px; height:15px; stroke:var(--gold); fill:none; stroke-width:1.7; }
+
+  .hero-media{ position:relative; align-self:stretch; min-height:420px; }
+  .hero-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:18px 0 0 18px; }
+  .hero-media::after{ content:""; position:absolute; inset:0; border-radius:18px 0 0 18px; box-shadow:inset 0 0 0 1px rgba(191,160,99,.4); pointer-events:none; }
+
+  /* chip */
+  .chip{ position:absolute; left:-34px; bottom:42px; z-index:3; background:var(--cream); border:1px solid var(--border); border-radius:14px; padding:14px 18px; display:flex; align-items:center; gap:13px; box-shadow:0 22px 50px -22px rgba(18,32,25,.5); }
+  .chip .ic{ width:42px; height:42px; border-radius:10px; background:var(--green-600); display:grid; place-items:center; color:var(--gold-soft); font-family:var(--serif); font-size:15px; font-weight:600; }
+  .chip .t{ font-family:var(--serif); font-size:18px; color:var(--green-700); line-height:1.05; }
+  .chip .s{ font-size:11px; color:var(--muted); letter-spacing:.04em; margin-top:2px; }
+  .stars{ color:var(--gold); font-size:13px; letter-spacing:2px; }
+
+  @media (max-width:880px){
+    .links,.actions{ display:none; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-media{ order:-1; min-height:54vh; }
+    .hero-media img,.hero-media::after{ border-radius:0; }
+    .chip{ left:auto; right:18px; bottom:18px; }
+  }
+
+  .reusable-header{ /* wrapper */ }
+</style>
+</head>
+<body>
+
+<!-- =================== TEST 1 =================== -->
+<div class="test-label"><span class="n">Teste 1</span><span class="d">Foto: <b>Balcão (packaging)</b> · Chip: <b>Conveniência</b></span></div>
+<div class="announce">Free shipping over $59 <span class="dot">·</span> <b>Naturally gluten-free</b>, made with real ingredients</div>
+<nav class="nav">
+  <div class="links"><a>Shop</a><a>Our Story</a><a>Ingredients</a><a>Reviews</a></div>
+  <a class="brand"><span class="wheat">✦</span><span class="mark">LIVV BITES</span><span class="sub">GOURMET</span></a>
+  <div class="actions"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></div>
+</nav>
+<section class="hero"><div class="hero-grid">
+  <div class="hero-copy">
+    <span class="eyebrow">Brazilian cheese bread <span>✦</span> reimagined</span>
+    <h1>Comfort food,<br><em>thoughtfully made.</em></h1>
+    <p class="lede">Golden, gluten-free Brazilian cheese bread made with <strong>real, recognizable ingredients</strong> — grass-fed cheese, bone broth, organic eggs. Frozen, then baked fresh in minutes.</p>
+    <div class="cta-row"><a class="btn btn-primary">Shop the collection</a><a class="btn btn-ghost">Our story</a></div>
+    <div class="trust"><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Gluten Free</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Made with Bone Broth</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Woman-Owned</span></div>
+  </div>
+  <div class="hero-media">
+    <img src="assets/lifestyle/packaging-traditional.jpg" alt="Package on kitchen counter" />
+    <div class="chip"><div class="ic">12</div><div><div class="t">Bake in minutes</div><div class="s">12 pieces · ready in 25 min</div></div></div>
+  </div>
+</div></section>
+
+<!-- =================== TEST 2 =================== -->
+<div class="test-label"><span class="n">Teste 2</span><span class="d">Foto: <b>Top-down espresso</b> · Chip: <b>Ritual / prova social</b></span></div>
+<div class="announce">Free shipping over $59 <span class="dot">·</span> <b>Naturally gluten-free</b>, made with real ingredients</div>
+<nav class="nav">
+  <div class="links"><a>Shop</a><a>Our Story</a><a>Ingredients</a><a>Reviews</a></div>
+  <a class="brand"><span class="wheat">✦</span><span class="mark">LIVV BITES</span><span class="sub">GOURMET</span></a>
+  <div class="actions"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></div>
+</nav>
+<section class="hero"><div class="hero-grid">
+  <div class="hero-copy">
+    <span class="eyebrow">Brazilian cheese bread <span>✦</span> reimagined</span>
+    <h1>Comfort food,<br><em>thoughtfully made.</em></h1>
+    <p class="lede">Golden, gluten-free Brazilian cheese bread made with <strong>real, recognizable ingredients</strong> — grass-fed cheese, bone broth, organic eggs. Frozen, then baked fresh in minutes.</p>
+    <div class="cta-row"><a class="btn btn-primary">Shop the collection</a><a class="btn btn-ghost">Our story</a></div>
+    <div class="trust"><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Gluten Free</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Made with Bone Broth</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Woman-Owned</span></div>
+  </div>
+  <div class="hero-media">
+    <img src="assets/lifestyle/pao-espresso-topdown.jpg" alt="Top-down cheese bread with espresso" />
+    <div class="chip"><div class="ic">★</div><div><div class="stars">★★★★★</div><div class="s">A new morning ritual</div></div></div>
+  </div>
+</div></section>
+
+<!-- =================== TEST 3 =================== -->
+<div class="test-label"><span class="n">Teste 3</span><span class="d">Foto: <b>Top-down espresso</b> · Chip: <b>Wellness / nutrição</b></span></div>
+<div class="announce">Free shipping over $59 <span class="dot">·</span> <b>Naturally gluten-free</b>, made with real ingredients</div>
+<nav class="nav">
+  <div class="links"><a>Shop</a><a>Our Story</a><a>Ingredients</a><a>Reviews</a></div>
+  <a class="brand"><span class="wheat">✦</span><span class="mark">LIVV BITES</span><span class="sub">GOURMET</span></a>
+  <div class="actions"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></div>
+</nav>
+<section class="hero"><div class="hero-grid">
+  <div class="hero-copy">
+    <span class="eyebrow">Brazilian cheese bread <span>✦</span> reimagined</span>
+    <h1>Comfort food,<br><em>thoughtfully made.</em></h1>
+    <p class="lede">Golden, gluten-free Brazilian cheese bread made with <strong>real, recognizable ingredients</strong> — grass-fed cheese, bone broth, organic eggs. Frozen, then baked fresh in minutes.</p>
+    <div class="cta-row"><a class="btn btn-primary">Shop the collection</a><a class="btn btn-ghost">Our story</a></div>
+    <div class="trust"><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Gluten Free</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Made with Bone Broth</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Woman-Owned</span></div>
+  </div>
+  <div class="hero-media">
+    <img src="assets/lifestyle/pao-espresso-topdown.jpg" alt="Top-down cheese bread with espresso" />
+    <div class="chip"><div class="ic">5g</div><div><div class="t">Protein per serving</div><div class="s">made with organic bone broth</div></div></div>
+  </div>
+</div></section>
+
+</body>
+</html>

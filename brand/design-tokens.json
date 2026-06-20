@@ -1,0 +1,114 @@
+{
+  "$meta": {
+    "status": "PLACEHOLDER",
+    "note": "Valores alinhados ao 'Packaging Example' fornecido pelo fundador (2026-06-19). Ainda aguardando aprovação formal. Ponto único de troca para tematização do site.",
+    "lastUpdated": "2026-06-19",
+    "source": "brand/brand-kit.md",
+    "reference": "Packaging Example — Premium Bone Broth Collection"
+  },
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#22402F",
+    "primaryDark": "#16291E",
+    "primaryDeep": "#122019",
+    "secondary": "#EFE6D2",
+    "secondaryDeep": "#E2D6BC",
+    "accentWood": "#A9794F",
+    "accentGold": "#BFA063",
+    "background": "#F4EEE0",
+    "surface": "#FFFFFF",
+    "textPrimary": "#22302A",
+    "textMuted": "#6E6657",
+    "textOnDark": "#F4EEE0",
+    "border": "#DBD0BB",
+    "link": "#22402F",
+    "success": "#3D7A53",
+    "warning": "#BFA063",
+    "error": "#9B3B33"
+  },
+  "greenScale": {
+    "900": "#122019",
+    "800": "#173124",
+    "700": "#1D3A2B",
+    "600": "#22402F",
+    "500": "#36513F",
+    "400": "#577061",
+    "300": "#88A091",
+    "200": "#BDCEC4",
+    "100": "#E3EAE4"
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": "Cormorant Garamond",
+      "heading": "Cormorant Garamond",
+      "body": "Inter"
+    },
+    "fontStacks": {
+      "heading": ["Cormorant Garamond", "Georgia", "serif"],
+      "body": ["Inter", "Helvetica", "Arial", "sans-serif"]
+    },
+    "fontWeights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "scale": {
+      "display": { "size": "56px", "lineHeight": 1.05, "weight": 500, "family": "Fraunces", "mobile": "36px" },
+      "h1": { "size": "40px", "lineHeight": 1.1, "weight": 500, "family": "Fraunces", "mobile": "30px" },
+      "h2": { "size": "30px", "lineHeight": 1.15, "weight": 500, "family": "Fraunces", "mobile": "24px" },
+      "h3": { "size": "22px", "lineHeight": 1.25, "weight": 600, "family": "Fraunces" },
+      "bodyLg": { "size": "18px", "lineHeight": 1.6, "weight": 400, "family": "Inter" },
+      "body": { "size": "16px", "lineHeight": 1.6, "weight": 400, "family": "Inter" },
+      "small": { "size": "14px", "lineHeight": 1.5, "weight": 400, "family": "Inter" },
+      "label": { "size": "13px", "lineHeight": 1.4, "weight": 600, "family": "Inter", "tracking": "0.06em", "transform": "uppercase" }
+    },
+    "minBodySize": "16px"
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "scale": [4, 8, 12, 16, 24, 32, 48, 64]
+  },
+  "radius": {
+    "sm": "6px",
+    "md": "12px",
+    "lg": "20px",
+    "pill": "999px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(22,39,30,0.06)",
+    "md": "0 6px 20px rgba(22,39,30,0.10)"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#22402F",
+      "textColor": "#F4EEE0",
+      "hoverBackground": "#16291E",
+      "borderRadius": "999px",
+      "style": "filled"
+    },
+    "buttonSecondary": {
+      "background": "transparent",
+      "textColor": "#22402F",
+      "borderColor": "#22402F",
+      "borderRadius": "999px"
+    },
+    "input": {
+      "background": "#FFFFFF",
+      "textColor": "#22302A",
+      "borderColor": "#DBD0BB",
+      "focusBorderColor": "#22402F",
+      "borderRadius": "6px"
+    },
+    "card": {
+      "background": "#FFFFFF",
+      "borderRadius": "12px",
+      "shadow": "0 1px 2px rgba(18,32,25,0.06)"
+    },
+    "badgeBestSeller": { "background": "#BFA063", "textColor": "#122019" },
+    "badgeSoldOut": { "background": "#E2D6BC", "textColor": "#6E6657" },
+    "freeShippingBar": { "track": "#E2D6BC", "fill": "#3D7A53" }
+  },
+  "fonts": {
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+  }
+}

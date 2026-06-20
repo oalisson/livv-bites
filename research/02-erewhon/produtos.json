@@ -1,0 +1,179 @@
+{
+  "source": "https://ship.erewhon.com/",
+  "scraped_at": "2026-06-18",
+  "total_products_visible": "100+ (paginated)",
+  "categories": [
+    {
+      "name": "Smoothie Kits",
+      "products": [
+        {"name": "Strawberry Glaze Skin Smoothie Kit", "price": "$100.00", "collab": "Hailey Bieber", "url": "/products/strawberry-glaze-smoothie-kit"},
+        {"name": "Coconut Cloud Smoothie Kit", "price": "$100.00", "collab": "Marianna Hewitt", "url": "/products/coconut-cloud-smoothie-kit"}
+      ]
+    },
+    {
+      "name": "Grocery / Pantry",
+      "products": [
+        {"name": "Organic Extra Virgin Olive Oil", "price": "From $16.00", "url": "/products/organic-extra-virgin-olive-oil-erewhon"},
+        {"name": "Chicken Bone Broth", "price": "$50.00", "url": "/products/organic-chicken-bone-broth"},
+        {"name": "Paleo Coconut Granola", "price": "$18.00", "url": "/products/erewhon-organic-paleo-coconut-granola"},
+        {"name": "Paleo Chocolate Granola", "price": "$18.00", "url": "/products/erewhon-organic-paleo-chocolate-granola"},
+        {"name": "Organic Vegan Granola", "price": "$18.00", "url": "/products/organic-vegan-granola"},
+        {"name": "Artisanal Sea Salt Popcorn", "price": "$10.00", "url": "/products/erewhon-organic-sea-salt-artisanal-popcorn"},
+        {"name": "Spirulina Artisanal Popcorn", "price": "$10.00", "url": "/products/erewhon-organic-spirulina-artisanal-popcorn"},
+        {"name": "Jalapeño Popcorn", "price": "$8.50", "url": "/products/erewhon-jalapeno-popcorn"},
+        {"name": "Buffalo Cauliflower Popcorn", "price": "$8.50", "url": "/products/buffalo-cauliflower-popcorn"},
+        {"name": "Kale Chips Raw Ranch", "price": "$15.00", "url": "/products/erewhon-kale-chips-raw-ranch"},
+        {"name": "Kale Chips Spicy", "price": "$15.00", "url": "/products/erewhon-kale-chips-spicy"},
+        {"name": "Kale Chips Spicy & Raw Ranch", "price": "$15.00", "url": "/products/erewhon-kale-chips-combo-spicy-raw-ranch"},
+        {"name": "Organic Plantain Chips Sea Salt", "price": "$9.00", "url": "/products/erewhon-organic-plantain-chips-sea-salt"},
+        {"name": "Chocolate Almond Biscotti", "price": "$18.00", "url": "/products/erewhon-organic-chocolate-almond-biscotti"},
+        {"name": "Almond Biscotti", "price": "$18.00", "url": "/products/organic-almond-biscotti"},
+        {"name": "Chocolate Macaroon", "price": "$21.00", "url": "/products/organic-chocolate-macaroon"},
+        {"name": "Plain Macaroon", "price": "$21.00", "url": "/products/erewhon-organic-plain-macaroon"},
+        {"name": "Pistachios Chocolate Toffee", "price": "$22.00", "url": "/products/erewhon-organic-pistachios-chocolate-toffee"},
+        {"name": "Dark Chocolate Date & Nut Bites (9pc)", "price": "$12.00", "url": "/products/erewhon-dark-chocolate-date-nut-bites"},
+        {"name": "Organic Dried Mango", "price": "$18.00", "url": "/products/organic-dried-mango"},
+        {"name": "Organic Medjool Dates", "price": "$18.00", "url": "/products/organic-medjool-dates-erewhon"},
+        {"name": "Organic Roasted Almond Butter", "price": "$16.00", "url": "/products/erewhon-organic-roasted-almond-butter"},
+        {"name": "Roasted Peanut Butter", "price": "$12.00", "url": "/products/organic-roasted-peanut-butter"},
+        {"name": "Organic Tahini", "price": "$14.00", "url": "/products/seedmill-organic-tahini-erewhon"},
+        {"name": "Marcona Almonds", "price": "$20.00", "url": "/products/erewhon-marcona-almonds"},
+        {"name": "Organic Candied Maple Pecans", "price": "$18.00", "url": "/products/organic-candied-maple-pecans"},
+        {"name": "Organic Candied Maple Walnuts", "price": "$16.00", "url": "/products/organic-candied-maple-walnuts"},
+        {"name": "Organic Sprouted Dulse Almonds", "price": "$16.00", "url": "/products/organic-sprouted-dulse-almonds"},
+        {"name": "Organic Pinnacle Trail Mix", "price": "$18.00", "url": "/products/organic-pinnacle-trail-mix-erewhon"},
+        {"name": "Organic Summit Trail Mix", "price": "$16.00", "url": "/products/organic-summit-trail-mix"},
+        {"name": "Sprouted Sunflower Seeds", "price": "$8.00", "url": "/products/sprouted-sunflower-seeds-erewhon"},
+        {"name": "Cilantro Lime Pepitas", "price": "$10.00", "url": "/products/cilantro-lime-pepitas"},
+        {"name": "Raw Sprouted Walnuts", "price": "$16.00", "url": "/products/raw-sprouted-walnuts-1"},
+        {"name": "Sprouted Banana Walnuts", "price": "$16.00", "url": "/products/erewhon-sprouted-banana-walnuts"},
+        {"name": "Mango Chili Lime", "price": "$12.00", "url": "/products/mango-chili-lime"},
+        {"name": "Roasted Cashews", "price": "$14.00", "url": "/products/roasted-cashews"},
+        {"name": "Organic Bay Leaves", "price": "$6.00", "url": "/products/organic-bay-leaves"},
+        {"name": "Flake Salt", "price": "$14.00", "url": "/products/erewhon-flake-salt"},
+        {"name": "Rosemary Infused Salt", "price": "$14.00", "url": "/products/rosemary-infused-salt"},
+        {"name": "Lemon Zest Salt", "price": "$14.00", "url": "/products/erewhon-lemon-zest-salt"},
+        {"name": "Black Garlic Salt", "price": "$14.00", "url": "/products/erewhon-black-garlic-salt"},
+        {"name": "Seeded Bar by Elissa Goodman (2oz)", "price": "$6.99", "url": "/products/seeded-bar-elissa-goodman-2oz"},
+        {"name": "Hazelnut Oat Bar", "price": "$6.99", "url": "/products/erewhon-hazelnut-oat-bar"}
+      ]
+    },
+    {
+      "name": "Beverages",
+      "products": [
+        {"name": "Kefir Soda Ginger (6-pack)", "price": "$35.00", "url": "/products/kefir-soda-ginger-6-pack"},
+        {"name": "Spring Water 24 Pack (16 oz)", "price": "$80.00", "url": "/products/erewhon-spring-water-24-pack-16-oz"},
+        {"name": "Regenerative Organic Coffee - Espresso Roast", "price": "$25.00", "url": "/products/erewhon-organic-roc-coffee-espresso-roast"},
+        {"name": "Regenerative Organic Coffee - House Roast", "price": "$25.00", "url": "/products/erewhon-organic-roc-coffee-house-roast"},
+        {"name": "MUD\\WTR Masala Chai", "price": "$40.00", "url": "/products/mud-wtr-masala-chai-erewhon"}
+      ]
+    },
+    {
+      "name": "Wellness / Supplements",
+      "products": [
+        {"name": "Cosmic Berry Sea Moss Gel", "price": "From $88.00", "url": "/products/cosmic-berry-sea-moss-gel"},
+        {"name": "Liposomal Vitamin C (30ct)", "price": "$74.00", "url": "/products/liposomal-vitamin-c"},
+        {"name": "Liposomal Glutathione (30ct)", "price": "$100.00", "url": "/products/liposomal-glutathione-pineapple-orange-30-ct"},
+        {"name": "Sleep Formula", "price": "$72.00", "url": "/products/erewhon-sleep-formula"},
+        {"name": "A2 Whey Protein Vanilla", "price": "$65.00", "url": "/products/erewhon-a2-whey-protein"},
+        {"name": "Men's Vitamin Pack (Perelel)", "price": "$65.00", "url": "/products/erewhon-vitamin-pack-mens-daily"},
+        {"name": "Women's Vitamin Pack", "price": "$65.00", "url": "/products/erewhon-vitamin-pack-womens-daily"},
+        {"name": "Magnesium Glycinate 400mg", "price": "$27.00", "url": "/products/magnesium-glycinate-400mg-erewhon"},
+        {"name": "Irish Sea Moss Capsules", "price": "$30.00", "url": "/products/irish-sea-moss-capsules-erewhon"},
+        {"name": "N-Acetyl Cysteine 600mg", "price": "$22.00", "url": "/products/n-acetyl-cysteine-600mg"},
+        {"name": "Complete Probiotic Formula", "price": "$45.00", "url": "/products/complete-probiotic-formula-erewhon"},
+        {"name": "Organic Protein Greens Super Powder", "price": "$55.00", "url": "/products/organic-protein-greens-super-powder-erewhon"},
+        {"name": "Lion's Mane", "price": "$30.00", "url": "/products/lions-mane-erewhon"},
+        {"name": "11:11 Super Multi Mushroom Synergy", "price": "$44.00", "url": "/products/11-11-super-multi-mushroom-synergy"},
+        {"name": "Ashwagandha Liquid Extract 1oz", "price": "$20.00", "url": "/products/ashwagandha-liquid-extract-1oz-erewhon"},
+        {"name": "Immune Elixir with Liposomal Vitamins", "price": "$68.00", "url": "/products/immune-elixir-with-liposomal-vitamins-black-elderberry"},
+        {"name": "Soothing Honey Lozenges", "price": "$12.00", "url": "/products/soothing-honey-lozenges-erewhon"},
+        {"name": "B-Tox Fountain", "price": "$60.00", "url": "/products/b-tox-fountain-erewhon"},
+        {"name": "Berberine-500 Veg Caps (Thorne)", "price": "$38.00", "url": "/products/berberine-500-veg-caps"},
+        {"name": "Metabolism Super Powder (Sakara)", "price": "$45.00", "url": "/products/metabolism-super-powder"},
+        {"name": "SuperHair (Moon Juice)", "price": "$60.00", "url": "/products/moonjuice-superhair-erewhon"},
+        {"name": "SuperYou (Moon Juice)", "price": "$49.00", "url": "/products/superyou"},
+        {"name": "HOLI(MANE) Hair Skin Nails", "price": "$69.00", "url": "/products/h-o-l-i-m-a-n-e-hair-skin-nails-supplement-erewhon"}
+      ]
+    },
+    {
+      "name": "Home & Body",
+      "products": [
+        {"name": "Liquid Hand Soap", "price": "$32.00", "url": "/products/erewhon-liquid-hand-soap"},
+        {"name": "Dish Soap", "price": "$18.00", "url": "/products/erewhon-dish-soap"},
+        {"name": "Body Wash", "price": "$28.00", "url": "/products/erewhon-body-wash"},
+        {"name": "Body Wash Bergamot Eucalyptus", "price": "$28.00", "url": "/products/body-wash-bergamot-eucalyptus"},
+        {"name": "Hand & Body Lotion", "price": "$32.00", "url": "/products/erewhon-hand-body-lotion"},
+        {"name": "Botanical Shampoo", "price": "$32.00", "url": "/products/botanical-shampoo-erewhon"},
+        {"name": "Botanic Conditioner", "price": "$32.00", "url": "/products/botanic-conditioner"},
+        {"name": "Botanic Hand Wash", "price": "$32.00", "url": "/products/botanic-hand-wash-erewhon"},
+        {"name": "Botanic Body Wash", "price": "$32.00", "url": "/products/botanic-body-wash-erewhon"},
+        {"name": "Hand Sanitizer Gel 2oz", "price": "$6.00", "url": "/products/hand-sanitizer-gel-2oz"},
+        {"name": "Antibacterial Hand Sanitizer Spray", "price": "$9.00", "url": "/products/anti-bacterial-hand-sanitizer-spray"},
+        {"name": "Eucalyptus Essential Oil", "price": "$18.00", "url": "/products/eucalyptus-globulus-essential-oil"},
+        {"name": "Peppermint Essential Oil", "price": "$18.00", "url": "/products/peppermint-essential-oil"},
+        {"name": "Lavender Essential Oil", "price": "$18.00", "url": "/products/lavender-angustifol-essential-oil"},
+        {"name": "Tea Tree Essential Oil", "price": "$18.00", "url": "/products/tea-tree-essential-oil"},
+        {"name": "Essential Oils Lineup", "price": "$72.00", "url": "/products/essential-oils-lineup"},
+        {"name": "Clear Gel Facial Cleanser", "price": "$36.00", "url": "/products/clear-gel-facial-cleanser"},
+        {"name": "Calm Creamy Facial Cleanser", "price": "$36.00", "url": "/products/calm-creamy-facial-cleanser"},
+        {"name": "Glow Facial Oil Moisturizer", "price": "$52.00", "url": "/products/glow-facial-oil-moisturizer"},
+        {"name": "Brilliant Facial Exfoliant", "price": "$40.00", "url": "/products/brilliant-facial-exfoliant-erewhon"},
+        {"name": "Vitality Facial Serum", "price": "$58.00", "url": "/products/vitality-facial-serum"},
+        {"name": "Illuminate Duo", "price": "$72.00", "url": "/products/illuminate-duo"},
+        {"name": "Palo Santo Protection Myst", "price": "$28.00", "url": "/products/palo-santao-protection-myst-wildcrafted-hydrosol"},
+        {"name": "Transcend Face & Body Mist", "price": "$28.00", "url": "/products/transcend-face-body-mist-erewhon"},
+        {"name": "Undaria Algae Body Butter (OSEA)", "price": "$48.00", "url": "/products/undaria-algae-body-butter"},
+        {"name": "Undaria Algae Body Oil (OSEA)", "price": "$48.00", "url": "/products/undaria-algae-body-oil-erewhon"},
+        {"name": "Salt & Stone Deodorant Naturale", "price": "$16.00", "url": "/products/salt-and-stone-deodorant-naturale"}
+      ]
+    },
+    {
+      "name": "Accessories / Merch",
+      "products": [
+        {"name": "Glass Storage Containers Large", "price": "$16.00", "url": "/products/erewhon-large-glass-storage-containers"},
+        {"name": "Market Hat Olive", "price": "$90.00", "url": "/products/erewhon-market-hat-green"},
+        {"name": "Dad Hat Brushed Twill Black", "price": "$70.00", "url": "/products/dad-hat-brushed-twill-black"},
+        {"name": "Dad Hat Khaki", "price": "$70.00", "url": "/products/dad-hat-khaki"},
+        {"name": "Dad Hat Charred Green", "price": "$70.00", "url": "/products/dad-hat-olive"},
+        {"name": "Dad Hat Chocolate Brown", "price": "Sold Out", "url": "/products/dad-hat-chocolate-brown"},
+        {"name": "Dad Hat Sky Blue", "price": "$70.00", "url": "/products/dad-hat-sky-blue"},
+        {"name": "Dad Hat Rose Tan", "price": "$70.00", "url": "/products/dad-hat-rose-tan"},
+        {"name": "Hoodie Oat", "price": "$170.00", "url": "/products/erewhon-hoodie-oat"},
+        {"name": "Hoodie Black", "price": "$170.00", "url": "/products/erewhon-hoodie-black"},
+        {"name": "Shopper Bag Black", "price": "$60.00", "url": "/products/erewhon-black-tote-bag"},
+        {"name": "Shopper Bag Stone Blue", "price": "$60.00", "url": "/products/shopper-bag-stone-blue"},
+        {"name": "Shopper Bag Eggshell", "price": "Sold Out", "url": "/products/shopper-bag-eggshell"},
+        {"name": "Shopper Bag Bracken", "price": "$60.00", "url": "/products/shopper-bag-bracken"},
+        {"name": "Washable Kraft Bag", "price": "$36.00", "url": "/products/erewhon-washable-kraft-bag"},
+        {"name": "Cooler Bag Black", "price": "$120.00", "url": "/products/insulated-bag-black"},
+        {"name": "Cooler Bag Brown", "price": "$120.00", "url": "/products/insulated-bag-brown"},
+        {"name": "Wide Mouth Bottle 32oz (MiiR)", "price": "$65.00", "colors": ["Black", "Sandstone", "Thousand Hills", "Tidal Blue", "Basal", "Evergreen"], "url": "/products/wide-mouth-stainless-steel-bottle-32-oz-1"},
+        {"name": "All Day Cup w/ Straw 32oz", "price": "$65.00", "colors": ["Black", "White", "Sandstone", "Rosewood"], "url": "/products/all-day-stainless-steel-cup-w-straw-32-oz"},
+        {"name": "All Day Cup w/ Straw 16oz", "price": "$50.00", "colors": ["White", "Black", "Rosewood"], "url": "/products/all-day-stainless-steel-cup-w-straw-16-oz"},
+        {"name": "Erewhon Cup 12oz", "price": "$45.00", "colors": ["Black", "Cedar Brown", "Feather Gray", "Rosewood"], "url": "/products/erewhon-cup-12-oz"}
+      ]
+    },
+    {
+      "name": "Gifts",
+      "products": [
+        {"name": "Breakfast Set", "price": "$135.00", "url": "/products/the-breakfast-gift-set"},
+        {"name": "Erewhon E-Gift Card", "price": "From $50.00", "url": "/products/erewhon-online-gift-card"},
+        {"name": "Gift Message", "price": "$3.00", "url": "/products/gift-message"}
+      ]
+    }
+  ],
+  "partner_brands": [
+    "Agent Nateur", "Akasha Superfoods", "Anima Mundi Apothecary", "ARMRA",
+    "Bathorium", "Beekeeper's Naturals", "Boka", "BOROUX", "CLEARSTEM Skincare",
+    "Codeage", "Corpus", "Cowboy Colostrum", "Cymbiotika", "Dallas Newman",
+    "DedCool", "Dr. Nigma", "E3 Live", "Fomin", "French Bloom", "Heart & Soil",
+    "Hyperice", "Instant Hydration", "ION", "Jolie", "Just Thrive Health",
+    "Lemme", "Machete", "MiiR", "Monks", "Moon Juice", "MUD/WTR", "Novos",
+    "Organic Olivia", "Organifi", "OSEA", "Pique", "rainbo", "Reencle",
+    "Regiis Ova Caviar", "RiseWell", "Sakara", "Salt & Stone", "Sangre de Fruta",
+    "Seed", "Seed + Mill", "Suri", "Taski", "The Absorption Company", "The Nue Co.",
+    "Thorne", "Three Ships", "Troop", "True Grace", "Truff", "Vacation",
+    "Wonder Valley", "Wooden Spoon Herbs"
+  ]
+}

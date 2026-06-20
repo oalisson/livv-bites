@@ -1,0 +1,66 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    { "family": "Helvetica", "role": "body" },
+    { "family": "Arial", "role": "body" }
+  ],
+  "colors": {
+    "primary": "#192FA4",
+    "secondary": "#F8D7DA",
+    "accent": "#192FA4",
+    "background": "#FFFFFF",
+    "textPrimary": "#003182",
+    "link": "#003182"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Helvetica",
+      "heading": "Helvetica"
+    },
+    "fontStacks": {
+      "heading": ["Helvetica", "Arial", "sans-serif"],
+      "body": ["Helvetica", "Arial", "sans-serif"],
+      "paragraph": ["Helvetica", "Arial", "sans-serif"]
+    },
+    "fontSizes": {
+      "h1": "12.8px",
+      "h2": "12.8px",
+      "body": "11.2px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "components": {
+    "input": {
+      "background": "transparent",
+      "textColor": "#003182",
+      "borderRadius": "0px",
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#192FA4",
+      "textColor": "#FFFFFF",
+      "borderRadius": "25px",
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "transparent",
+      "textColor": "#212121",
+      "borderColor": "#212121",
+      "borderRadius": "0px",
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://www.rockysmatcha.com/cdn/shop/files/Rm-Blue-Header.png?crop=center&height=57&v=1711155080&width=100",
+    "favicon": "https://www.rockysmatcha.com/cdn/shop/files/Screenshot_2024-03-07_at_5.42.42_PM.png?crop=center&height=32&v=1709862170&width=32",
+    "ogImage": "http://www.rockysmatcha.com/cdn/shop/files/Rocky_Matcha_Shot_1_412_1-Cleanedup-2.jpg?v=1726159648"
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "health-conscious consumers"
+  }
+}

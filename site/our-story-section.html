@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — Our Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     LIVV BITES — "Our Story" (Split Editorial)
+     Tokens from brand/design-tokens.json (placeholder)
+     ============================================================ */
+  :root{
+    --green-900:#122019; --green-800:#173124; --green-700:#1d3a2b;
+    --green-600:#22402f; --green-400:#577061; --green-300:#88a091;
+    --cream:#f4eee0; --cream-deep:#ece2cf; --beige:#efe6d2; --beige-deep:#e2d6bc;
+    --gold:#bfa063; --gold-soft:#d8c79a; --wood:#a9794f;
+    --text:#22302a; --muted:#6e6657; --border:#dbd0bb;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Inter", system-ui, sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .story{
+    position:relative;
+    background:radial-gradient(80% 70% at 88% 15%, rgba(191,160,99,.10), transparent 55%), var(--cream);
+  }
+  .story-grid{
+    max-width:1280px; margin:0 auto;
+    display:grid; grid-template-columns:.95fr 1.05fr; align-items:stretch;
+    min-height:min(88vh,780px);
+  }
+
+  /* media (bleeds to the left edge) */
+  .story-media{ position:relative; min-height:480px; }
+  .story-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:0 18px 18px 0; }
+  .story-media::after{ content:""; position:absolute; inset:0; border-radius:0 18px 18px 0; box-shadow:inset 0 0 0 1px rgba(191,160,99,.4), inset 0 -60px 90px -40px rgba(18,32,25,.4); pointer-events:none; }
+  /* floating est. badge */
+  .est{
+    position:absolute; right:-30px; top:46px; z-index:3;
+    background:var(--green-600); color:var(--gold-soft);
+    border-radius:50%; width:104px; height:104px; display:grid; place-items:center; text-align:center;
+    box-shadow:0 22px 50px -20px rgba(18,32,25,.55);
+    font-family:var(--serif); line-height:1.1;
+  }
+  .est b{ display:block; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--cream); font-family:var(--sans); font-weight:600; }
+  .est .big{ font-size:30px; }
+
+  /* copy */
+  .story-copy{ padding:clamp(48px,8vh,104px) clamp(24px,5vw,80px); display:flex; flex-direction:column; justify-content:center; }
+  .kicker{ display:inline-flex; align-items:center; gap:12px; margin-bottom:24px; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--green-600); font-weight:600; }
+  .kicker::before{ content:""; width:30px; height:1px; background:var(--gold); }
+
+  .story h2{ font-family:var(--serif); font-weight:500; font-size:clamp(38px,5vw,66px); line-height:1.02; letter-spacing:-.01em; color:var(--green-700); }
+  .story h2 em{ font-style:italic; color:var(--gold); }
+
+  .quote{
+    font-family:var(--serif); font-style:italic; font-size:clamp(20px,2.2vw,26px);
+    line-height:1.4; color:var(--green-700); margin:26px 0; padding-left:22px;
+    border-left:2px solid var(--gold);
+  }
+  .story-copy p{ font-size:16.5px; line-height:1.75; color:var(--muted); max-width:54ch; }
+  .story-copy p + p{ margin-top:16px; }
+  .story-copy p strong{ color:var(--text); font-weight:600; }
+
+  /* values */
+  .values{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+  .values span{
+    display:inline-flex; align-items:center; gap:8px; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--green-700);
+    background:var(--beige); border:1px solid var(--border); border-radius:999px; padding:9px 16px;
+  }
+  .values span::before{ content:"◇"; color:var(--gold); }
+
+  /* signature + cta */
+  .sign{ margin-top:34px; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .sign .who{ font-family:var(--serif); font-style:italic; font-size:22px; color:var(--green-700); }
+  .sign .who b{ display:block; font-style:normal; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-family:var(--sans); font-weight:600; margin-top:4px; }
+  .btn-ghost{
+    display:inline-flex; align-items:center; gap:10px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+    padding:14px 30px; border-radius:999px; border:1px solid var(--green-600); color:var(--green-700); cursor:pointer;
+    transition:background .4s var(--ease), color .4s var(--ease), transform .4s var(--ease);
+  }
+  .btn-ghost:hover{ background:var(--green-600); color:var(--cream); transform:translateY(-3px); }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in{ opacity:1; transform:none; }
+  .r2{ transition-delay:.12s; } .r3{ transition-delay:.22s; } .r4{ transition-delay:.32s; }
+  .story-media{ opacity:0; transition:opacity 1.2s var(--ease); }
+  .story-media.in{ opacity:1; }
+
+  @media (max-width:880px){
+    .story-grid{ grid-template-columns:1fr; }
+    .story-media{ order:-1; min-height:56vh; }
+    .story-media img,.story-media::after{ border-radius:0; }
+    .est{ right:18px; top:auto; bottom:-30px; width:90px; height:90px; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;}
+    .reveal,.story-media{opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<section class="story">
+  <div class="story-grid">
+
+    <div class="story-media reveal">
+      <!-- TODO: swap for a founder/lifestyle portrait when available -->
+      <img src="assets/ingredients/brazilian-comfort.jpg" alt="Brazilian cheese bread and coffee on a warm, sunlit table" />
+      <div class="est">
+        <div><b>Est.</b><span class="big">Brazil</span></div>
+      </div>
+    </div>
+
+    <div class="story-copy">
+      <span class="kicker reveal in">Our Story</span>
+      <h2 class="reveal in r2">It started at a<br><em>Brazilian table.</em></h2>
+
+      <blockquote class="quote reveal r3">"The best food doesn't need a complicated list of ingredients — just real ones, and people to share it with."</blockquote>
+
+      <p class="reveal r3">Growing up in Brazil, pão de queijo meant warmth — slow mornings, family gathered close, something made with care. When we moved to the States, that comfort was hard to find without a label full of words we couldn't pronounce.</p>
+      <p class="reveal r4">So we made it ourselves: the same golden, naturally gluten-free cheese bread, with <strong>real, recognizable ingredients</strong> — grass-fed cheese, organic eggs, and bone broth. Small-batch, woman-owned, and made the way we remember it.</p>
+
+      <div class="values reveal r4">
+        <span>Woman-owned</span>
+        <span>Small-batch</span>
+        <span>Clean ingredients</span>
+        <span>Naturally gluten-free</span>
+      </div>
+
+      <div class="sign reveal r4">
+        <!-- TODO: replace with founder's real name / signature -->
+        <div class="who">With love,<b>The LIVV BITES family</b></div>
+        <a href="#" class="btn-ghost">Read our full story</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.18});
+  document.querySelectorAll(".reveal:not(.in)").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
