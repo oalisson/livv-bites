@@ -29,7 +29,17 @@
       "Bash(git init *)",
       "Bash(git config *)",
       "Bash(git add *)",
-      "Bash(git commit -q -m 'Livv Bites: brand kit + homepage \\(hero, how it works, ingredients, our story, reviews, footer\\) *)"
+      "Bash(git commit -q -m 'Livv Bites: brand kit + homepage \\(hero, how it works, ingredients, our story, reviews, footer\\) *)",
+      "Bash(brew install *)",
+      "Bash(head -2)",
+      "Bash(echo 'user: __TRACKED_VAR__')",
+      "Bash(echo \"== branch atual ==\")",
+      "Bash(git branch *)",
+      "Bash(echo \"renomeado p/ main\")",
+      "Bash(python3 -c 'import sys,json; *)",
+      "Bash(git commit -q -m 'Add devcontainer \\(Codespaces\\) + project README *)",
+      "Bash(git push *)",
+      "Bash(gh api *)"
     ]
   }
 }
