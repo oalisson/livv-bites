@@ -38,10 +38,12 @@ No arquivo [`site/shop-section.html`](../site/shop-section.html), trocar os plac
 
 | Placeholder | Onde |
 |-------------|------|
-| `REPLACE_WITH_STRIPE_PAYMENT_LINK_TRADITIONAL` | botão "Buy now" do produto Traditional |
-| `REPLACE_WITH_STRIPE_PAYMENT_LINK_BUNDLE` | botão "Buy now" do The Comfort Box |
+| `..._TRADITIONAL_LIVE` / `..._TRADITIONAL_TEST` | "Buy now" do **Traditional** |
+| `..._BONEBROTH_LIVE` / `..._BONEBROTH_TEST` | "Buy now" do **with Bone Broth** (bestseller) |
 
-Também atualizar **preços** (`$14.00` / `$36.00`) e remover as tags `placeholder`.
+(Cada produto tem 2 links: `_LIVE` = produção, `_TEST` = modo de teste — ver seção 🧪 abaixo.)
+
+Também atualizar **preços** (`$14.00` / `$16.00`), trocar a **foto do Bone Broth** e remover as tags `placeholder` / `foto a confirmar`.
 
 ## Passo 5 — Publicar
 ```bash

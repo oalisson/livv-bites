@@ -69,9 +69,10 @@
     padding:clamp(48px,7vh,72px) 0 clamp(36px,5vh,48px);
     display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:clamp(28px,4vw,56px);
   }
-  .brandcol .wheat{ color:var(--gold); font-size:14px; }
-  .brandcol .mark{ font-family:var(--serif); font-size:27px; letter-spacing:.32em; color:var(--cream); display:block; margin-top:6px; padding-left:.32em; }
-  .brandcol .sub{ font-size:9px; letter-spacing:.46em; color:var(--gold); display:block; margin-top:7px; padding-left:.46em; }
+  .brandcol{ text-align:left; }
+  .brandcol .wheat{ display:block; line-height:0; margin-bottom:9px; }
+  .brandcol .mark{ font-family:var(--serif); font-size:28px; letter-spacing:.3em; color:var(--cream); display:block; }
+  .brandcol .sub{ font-size:9px; letter-spacing:.42em; color:var(--gold); display:block; margin-top:7px; }
   .brandcol p{ margin-top:20px; font-size:14px; line-height:1.65; color:var(--dim); max-width:34ch; }
 
   .socials{ display:flex; gap:12px; margin-top:24px; }
@@ -138,7 +139,7 @@
     <!-- Columns -->
     <div class="cols">
       <div class="brandcol">
-        <span class="wheat">✦</span>
+        <span class="wheat"><svg viewBox="7 7 22 44" width="16" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M18 51 C17.4 43 18 36 18 28 C18 22 18.4 17 18 12" fill="none" stroke="#d8c79a" stroke-width="1.7" stroke-linecap="round"/><g fill="#d8c79a"><ellipse cx="11.5" cy="40" rx="2.1" ry="5.2" transform="rotate(-40 11.5 40)"/><ellipse cx="24.5" cy="36" rx="2.1" ry="5.2" transform="rotate(40 24.5 36)"/><ellipse cx="11" cy="30.5" rx="2" ry="5" transform="rotate(-34 11 30.5)"/><ellipse cx="25" cy="26.5" rx="2" ry="5" transform="rotate(34 25 26.5)"/><ellipse cx="12.2" cy="21.5" rx="1.9" ry="4.6" transform="rotate(-29 12.2 21.5)"/><ellipse cx="23.8" cy="18.5" rx="1.9" ry="4.6" transform="rotate(29 23.8 18.5)"/><ellipse cx="18" cy="12.5" rx="1.9" ry="5" transform="rotate(5 18 12.5)"/></g><g fill="#bfa063"><circle cx="15.8" cy="42.5" r="1.5"/><circle cx="20.6" cy="38.5" r="1.5"/></g></svg></span>
         <span class="mark">LIVV BITES</span>
         <span class="sub">GOURMET</span>
         <p>Premium Brazilian cheese bread, thoughtfully made with real, recognizable ingredients. Woman-owned, small-batch.</p>
@@ -153,10 +154,9 @@
       <div class="col">
         <h4>Shop</h4>
         <ul>
-          <li><a href="#">All products</a></li>
-          <li><a href="#">Brazilian Cheese Bread</a></li>
-          <li><a href="#">Build a box</a></li>
-          <li><a href="#">Gift cards</a></li>
+          <li><a href="#shop">Traditional</a></li>
+          <li><a href="#shop">With Bone Broth</a></li>
+          <li><a href="#shop">All products</a></li>
         </ul>
       </div>
 

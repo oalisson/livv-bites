@@ -138,31 +138,50 @@ html{scroll-behavior:smooth;scroll-padding-top:84px;}
 .site-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1.5px;background:var(--gold);transition:right .35s var(--ease);}
 .site-links a:hover{color:var(--green-900);}
 .site-links a:hover::after{right:0;}
-.site-brand{text-align:center;line-height:1;}
-.site-brand .w{display:flex;justify-content:center;margin-bottom:4px;}
-.site-brand .m{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.34em;color:var(--green-700);padding-left:.34em;}
-.site-brand .s{display:block;font-size:8.5px;letter-spacing:.46em;color:var(--gold);margin-top:5px;padding-left:.46em;}
+.site-brand{display:inline-flex;flex-direction:column;align-items:center;line-height:1;}
+.site-brand .w{display:flex;margin:0 0 5px .17em;}
+.site-brand .m{font-family:var(--serif);font-weight:500;font-size:27px;letter-spacing:.34em;color:var(--green-700);padding-left:.34em;}
+.site-brand .s{font-size:9px;letter-spacing:.46em;color:var(--gold);margin-top:6px;padding-left:.46em;}
 .site-actions{display:flex;gap:20px;justify-content:flex-end;align-items:center;color:var(--green-700);}
 .site-actions svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;}
 .site-cart{position:relative;}
 .site-cart .count{position:absolute;top:-7px;right:-9px;background:var(--green-600);color:var(--cream);font-size:10px;font-weight:600;width:16px;height:16px;border-radius:50%;display:grid;place-items:center;}
 .site-menu{display:none;background:none;border:none;cursor:pointer;color:var(--green-700);}
 @media (max-width:880px){
-  .site-nav{grid-template-columns:auto 1fr auto;}
+  .site-announce{font-size:11px;letter-spacing:.08em;padding:9px 14px;}
+  .site-nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .site-links{display:none;}
-  .site-brand{text-align:left;}
+  .site-brand{align-items:flex-start;}
+  .site-brand .w{margin-left:0;}
+  .site-brand .m{padding-left:0;font-size:25px;}
+  .site-brand .s{padding-left:0;}
+  .site-actions{gap:18px;margin-left:auto;}
+  .site-actions > svg{display:none;}
   .site-menu{display:flex;}
-  .site-menu svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;}
+  .site-menu svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;}
 }
+/* mobile nav drawer */
+.site-drawer{position:fixed;inset:0;z-index:300;visibility:hidden;}
+.site-drawer .scrim{position:absolute;inset:0;background:rgba(18,32,25,.5);opacity:0;transition:opacity .3s var(--ease);}
+.site-drawer .drawer-panel{position:absolute;top:0;right:0;height:100%;width:min(84vw,330px);background:var(--cream);box-shadow:-20px 0 50px -20px rgba(18,32,25,.45);transform:translateX(100%);transition:transform .38s var(--ease);display:flex;flex-direction:column;padding:78px 30px 30px;}
+.site-drawer.open{visibility:visible;}
+.site-drawer.open .scrim{opacity:1;}
+.site-drawer.open .drawer-panel{transform:none;}
+.drawer-close{position:absolute;top:20px;right:20px;background:none;border:none;cursor:pointer;color:var(--green-700);padding:6px;}
+.drawer-close svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;}
+.drawer-links{display:flex;flex-direction:column;}
+.drawer-links a{font-family:var(--serif);font-size:29px;color:var(--green-700);padding:13px 0;border-bottom:1px solid var(--border);transition:color .2s var(--ease);}
+.drawer-links a:active{color:var(--gold);}
+.drawer-cta{margin-top:auto;text-align:center;background:var(--green-600);color:var(--cream);padding:16px;border-radius:999px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;}
 .test-banner{position:fixed;left:0;right:0;bottom:0;z-index:500;background:var(--gold);color:var(--green-900);text-align:center;font:600 12px/1.4 var(--sans);letter-spacing:.05em;padding:9px 16px;}
 """
 
 HEADER_HTML = f"""
-<div class="site-announce">Free shipping over $59 <span class="dot">·</span> <b>Naturally gluten-free</b>, made with real ingredients</div>
+<div class="site-announce"><b>Naturally gluten-free</b> <span class="dot">·</span> made with real, recognizable ingredients</div>
 <header class="site-header">
   <div class="site-nav">
     <div class="site-links">{''.join(nav_links)}</div>
-    <a href="#top" class="site-brand"><span class="w"><svg viewBox="6 8 24 44" width="14" height="22" fill="none" stroke="#bfa063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 50 V22"/><path d="M18 22 C15.5 18.5 15.5 14.5 18 11 C20.5 14.5 20.5 18.5 18 22 Z"/><path d="M18 28 C14 26 11.5 24 10 20.5"/><path d="M18 28 C22 26 24.5 24 26 20.5"/><path d="M18 35 C14 33 11.5 31 10 27.5"/><path d="M18 35 C22 33 24.5 31 26 27.5"/><path d="M18 42 C14.5 40 12.5 38 11 35"/><path d="M18 42 C21.5 40 23.5 38 25 35"/></svg></span><span class="m">LIVV BITES</span><span class="s">GOURMET</span></a>
+    <a href="#top" class="site-brand"><span class="w"><svg viewBox="7 7 22 44" width="14" height="27" xmlns="http://www.w3.org/2000/svg"><path d="M18 51 C17.4 43 18 36 18 28 C18 22 18.4 17 18 12" fill="none" stroke="#bfa063" stroke-width="1.8" stroke-linecap="round"/><g fill="#bfa063"><ellipse cx="11.5" cy="40" rx="2.1" ry="5.2" transform="rotate(-40 11.5 40)"/><ellipse cx="24.5" cy="36" rx="2.1" ry="5.2" transform="rotate(40 24.5 36)"/><ellipse cx="11" cy="30.5" rx="2" ry="5" transform="rotate(-34 11 30.5)"/><ellipse cx="25" cy="26.5" rx="2" ry="5" transform="rotate(34 25 26.5)"/><ellipse cx="12.2" cy="21.5" rx="1.9" ry="4.6" transform="rotate(-29 12.2 21.5)"/><ellipse cx="23.8" cy="18.5" rx="1.9" ry="4.6" transform="rotate(29 23.8 18.5)"/><ellipse cx="18" cy="12.5" rx="1.9" ry="5" transform="rotate(5 18 12.5)"/></g><g fill="#a9794f"><circle cx="15.8" cy="42.5" r="1.5"/><circle cx="20.6" cy="38.5" r="1.5"/></g></svg></span><span class="m">LIVV BITES</span><span class="s">GOURMET</span></a>
     <div class="site-actions">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -171,6 +190,14 @@ HEADER_HTML = f"""
     </div>
   </div>
 </header>
+<div class="site-drawer" id="drawer" aria-hidden="true">
+  <div class="scrim" data-close></div>
+  <nav class="drawer-panel" aria-label="Menu">
+    <button class="drawer-close" data-close aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="drawer-links">{''.join(nav_links)}</div>
+    <a href="#shop" class="drawer-cta" data-close>Shop the collection</a>
+  </nav>
+</div>
 """
 
 JS = """
@@ -198,6 +225,27 @@ if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
     a.href=(test&&t)?t:live;
   });
   if(test){const b=document.createElement("div");b.className="test-banner";b.textContent="🧪 TEST MODE — pagamentos não são reais · cartão 4242 4242 4242 4242";document.body.appendChild(b);}
+})();
+// Our Story: expandir "Read our full story" inline
+document.querySelectorAll("[data-story-toggle]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const sec=btn.closest("section")||document;
+    const more=sec.querySelector(".story-more");
+    if(!more)return;
+    const open=more.classList.toggle("open");
+    btn.setAttribute("aria-expanded",open);
+    btn.textContent=open?"Read less":"Read our full story";
+  });
+});
+// mobile nav drawer
+(function(){
+  const drawer=document.getElementById("drawer");
+  const menuBtn=document.querySelector(".site-menu");
+  if(!drawer||!menuBtn)return;
+  const open=()=>{drawer.classList.add("open");document.documentElement.style.overflow="hidden";};
+  const close=()=>{drawer.classList.remove("open");document.documentElement.style.overflow="";};
+  menuBtn.addEventListener("click",open);
+  drawer.querySelectorAll("[data-close], .drawer-links a, .drawer-cta").forEach(el=>el.addEventListener("click",close));
 })();
 """
 

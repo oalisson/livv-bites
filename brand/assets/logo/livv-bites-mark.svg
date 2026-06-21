@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LIVV BITES">
   <rect width="64" height="64" rx="16" fill="#22402f"/>
-  <g fill="none" stroke="#d8c79a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"
-     transform="translate(14,7) scale(0.69)">
-    <path d="M18 50 V22"/>
-    <path d="M18 22 C15.5 18.5 15.5 14.5 18 11 C20.5 14.5 20.5 18.5 18 22 Z"/>
-    <path d="M18 28 C14 26 11.5 24 10 20.5"/>
-    <path d="M18 28 C22 26 24.5 24 26 20.5"/>
-    <path d="M18 35 C14 33 11.5 31 10 27.5"/>
-    <path d="M18 35 C22 33 24.5 31 26 27.5"/>
-    <path d="M18 42 C14.5 40 12.5 38 11 35"/>
-    <path d="M18 42 C21.5 40 23.5 38 25 35"/>
+  <g transform="translate(14,7) scale(0.69)">
+    <path d="M18 51 C17.4 43 18 36 18 28 C18 22 18.4 17 18 12" fill="none" stroke="#d8c79a" stroke-width="1.8" stroke-linecap="round"/>
+    <g fill="#d8c79a">
+      <ellipse cx="11.5" cy="40" rx="2.1" ry="5.2" transform="rotate(-40 11.5 40)"/>
+      <ellipse cx="24.5" cy="36" rx="2.1" ry="5.2" transform="rotate(40 24.5 36)"/>
+      <ellipse cx="11" cy="30.5" rx="2" ry="5" transform="rotate(-34 11 30.5)"/>
+      <ellipse cx="25" cy="26.5" rx="2" ry="5" transform="rotate(34 25 26.5)"/>
+      <ellipse cx="12.2" cy="21.5" rx="1.9" ry="4.6" transform="rotate(-29 12.2 21.5)"/>
+      <ellipse cx="23.8" cy="18.5" rx="1.9" ry="4.6" transform="rotate(29 23.8 18.5)"/>
+      <ellipse cx="18" cy="12.5" rx="1.9" ry="5" transform="rotate(5 18 12.5)"/>
+    </g>
+    <g fill="#bfa063"><circle cx="15.8" cy="42.5" r="1.5"/><circle cx="20.6" cy="38.5" r="1.5"/></g>
   </g>
 </svg>

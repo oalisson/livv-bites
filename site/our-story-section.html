@@ -73,6 +73,13 @@
   .story-copy p + p{ margin-top:16px; }
   .story-copy p strong{ color:var(--text); font-weight:600; }
 
+  /* expanding full story */
+  .story-more{ max-height:0; overflow:hidden; opacity:0; transition:max-height .6s var(--ease), opacity .5s var(--ease), margin-top .6s var(--ease); }
+  .story-more.open{ max-height:420px; opacity:1; margin-top:18px; }
+  .story-more p{ font-size:16px; line-height:1.75; color:var(--muted); max-width:54ch; }
+  .story-more p + p{ margin-top:14px; }
+  .btn-ghost[data-story-toggle]{ background:none; }
+
   /* values */
   .values{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
   .values span{
@@ -101,7 +108,7 @@
 
   @media (max-width:880px){
     .story-grid{ grid-template-columns:1fr; }
-    .story-media{ order:-1; min-height:56vh; }
+    .story-media{ order:-1; min-height:42vh; max-height:380px; }
     .story-media img,.story-media::after{ border-radius:0; }
     .est{ right:18px; top:auto; bottom:-30px; width:90px; height:90px; }
   }
@@ -119,9 +126,6 @@
     <div class="story-media reveal">
       <!-- TODO: swap for a founder/lifestyle portrait when available -->
       <img src="assets/ingredients/brazilian-comfort.jpg" alt="Brazilian cheese bread and coffee on a warm, sunlit table" />
-      <div class="est">
-        <div><b>Est.</b><span class="big">Brazil</span></div>
-      </div>
     </div>
 
     <div class="story-copy">
@@ -131,7 +135,12 @@
       <blockquote class="quote reveal r3">"The best food doesn't need a complicated list of ingredients — just real ones, and people to share it with."</blockquote>
 
       <p class="reveal r3">Growing up in Brazil, pão de queijo meant warmth — slow mornings, family gathered close, something made with care. When we moved to the States, that comfort was hard to find without a label full of words we couldn't pronounce.</p>
-      <p class="reveal r4">So we made it ourselves: the same golden, naturally gluten-free cheese bread, with <strong>real, recognizable ingredients</strong> — grass-fed cheese, organic eggs, and bone broth. Small-batch, woman-owned, and made the way we remember it.</p>
+      <p class="reveal r4">So we made it ourselves: the same golden, naturally gluten-free cheese bread, with <strong>real, recognizable ingredients</strong> — grass-fed cheese, organic eggs, and olive oil. Small-batch, woman-owned, and made the way we remember it.</p>
+
+      <div class="story-more">
+        <p>What began in a small kitchen became a promise: to honor the tradition we grew up with, while making it fit the way we eat today — clean, simple, and free of anything we couldn't recognize.</p>
+        <p>Every batch is still made in small quantities, with the same care as the first. Because to us, this was never just about cheese bread — it's about the moments it creates around the table.</p>
+      </div>
 
       <div class="values reveal r4">
         <span>Woman-owned</span>
@@ -143,7 +152,7 @@
       <div class="sign reveal r4">
         <!-- TODO: replace with founder's real name / signature -->
         <div class="who">With love,<b>The LIVV BITES family</b></div>
-        <a href="#" class="btn-ghost">Read our full story</a>
+        <button type="button" class="btn-ghost" data-story-toggle aria-expanded="false">Read our full story</button>
       </div>
     </div>
 
