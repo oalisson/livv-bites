@@ -19,7 +19,7 @@ SECTIONS = [
 # Versão B (/b.html) — ordem otimizada dos 10 pontos (sections novas entram aqui)
 SECTIONS_B = [
     ("hero",    "v2/hero-v2-section.html",    "top",         None),
-    ("shop",    "shop-section.html",          "shop",        "Shop"),
+    ("shop",    "v2/shop-v2-section.html",    "shop",        "Shop"),
     ("hiw",     "how-it-works-section.html",  "how-it-works",None),
     ("ing",     "ingredients-section.html",   "ingredients", None),
     ("story",   "our-story-section.html",     "story",       "Our Story"),
