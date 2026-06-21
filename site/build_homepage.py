@@ -315,11 +315,10 @@ html = f"""<!DOCTYPE html>
 </html>
 """
 
-# um único index.html na raiz (o que o GitHub Pages serve); imagens em assets/
-root_out = SITE.parent / "index.html"
-root_out.write_text(html)
-kb = len(html.encode()) / 1024
-print(f"OK -> {root_out}  ({kb:.0f} KB)")
+# NOTA: o index.html (home A) é mantido À MÃO (versão Halysson) — o build NÃO o
+# sobrescreve mais. Este build gera apenas o b.html (Versão B) abaixo.
+_a_kb = len(html.encode()) / 1024
+print(f"(A computado, {_a_kb:.0f} KB — index.html preservado, não gravado)")
 
 
 # ============ Versão B (b.html) — reusa GLOBAL_CHROME, JS, favicon, make_header ============
