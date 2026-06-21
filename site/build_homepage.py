@@ -16,6 +16,17 @@ SECTIONS = [
     ("footer",  "footer-section.html",        "footer",      None),
 ]
 
+# Versão B (/b.html) — ordem otimizada dos 10 pontos (sections novas entram aqui)
+SECTIONS_B = [
+    ("hero",    "v2/hero-v2-section.html",    "top",         None),
+    ("shop",    "shop-section.html",          "shop",        "Shop"),
+    ("hiw",     "how-it-works-section.html",  "how-it-works",None),
+    ("ing",     "ingredients-section.html",   "ingredients", None),
+    ("story",   "our-story-section.html",     "story",       "Our Story"),
+    ("reviews", "reviews-section.html",        "reviews",     None),
+    ("footer",  "footer-section.html",        "footer",      None),
+]
+
 GLOBAL_SELECTORS = {":root", "*", "body", "html", "a", "body::before"}
 
 
@@ -176,7 +187,8 @@ html{scroll-behavior:smooth;scroll-padding-top:84px;}
 .test-banner{position:fixed;left:0;right:0;bottom:0;z-index:500;background:var(--gold);color:var(--green-900);text-align:center;font:600 12px/1.4 var(--sans);letter-spacing:.05em;padding:9px 16px;}
 """
 
-HEADER_HTML = f"""
+def make_header(nav_links):
+    return f"""
 <div class="site-announce"><b>Naturally gluten-free</b> <span class="dot">·</span> made with real, recognizable ingredients</div>
 <header class="site-header">
   <div class="site-nav">
@@ -288,7 +300,7 @@ html = f"""<!DOCTYPE html>
 </head>
 <body>
 <span id="top"></span>
-{HEADER_HTML}
+{make_header(nav_links)}
 {chr(10).join(sec_html)}
 <script>{JS}</script>
 </body>
@@ -300,3 +312,49 @@ root_out = SITE.parent / "index.html"
 root_out.write_text(html)
 kb = len(html.encode()) / 1024
 print(f"OK -> {root_out}  ({kb:.0f} KB)")
+
+
+# ============ Versão B (b.html) — reusa GLOBAL_CHROME, JS, favicon, make_header ============
+store_b = {}
+sec_css_b, sec_html_b, nav_b = [], [], []
+for name, fn, anchor, label in SECTIONS_B:
+    style, body = extract(read(fn))
+    if name == "hero":
+        body = strip_hero_chrome(body)
+    body = re.sub(r"<script[^>]*>.*?</script>", "", body, flags=re.S)
+    sec_css_b.append(f"/* {name} */\n" + scope_css(style, f".scope-{name}", store_b))
+    sec_html_b.append(f'<section id="{anchor}" class="liv-sec scope-{name}">{body}</section>')
+    if label:
+        nav_b.append(f'<a href="#{anchor}">{label}</a>')
+base_b = "\n".join(f"{pre}{{{inner}}}" for pre, inner in store_b.get("base", {}).items())
+at_b = "\n".join(store_b.get("at", {}).values())
+
+html_b = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — Brazilian Cheese Bread (v2)</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="{favicon_uri}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+{base_b}
+{at_b}
+{GLOBAL_CHROME}
+{chr(10).join(sec_css_b)}
+</style>
+</head>
+<body>
+<span id="top"></span>
+{make_header(nav_b)}
+{chr(10).join(sec_html_b)}
+<script>{JS}</script>
+</body>
+</html>
+"""
+b_out = SITE.parent / "b.html"
+b_out.write_text(html_b)
+print(f"OK -> {b_out}  ({len(html_b.encode())/1024:.0f} KB)")

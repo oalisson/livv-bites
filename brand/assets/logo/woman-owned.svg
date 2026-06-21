@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Woman Owned">
+  <defs>
+    <path id="wo-circ" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0" />
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="#f4eee0" opacity="0.94"/>
+  <circle cx="60" cy="60" r="58" fill="none" stroke="#bfa063" stroke-width="1.4"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#bfa063" stroke-width="0.8"/>
+  <text font-family="Inter, sans-serif" font-size="8.6" font-weight="600" letter-spacing="3.4" fill="#22402f">
+    <textPath href="#wo-circ" startOffset="2%">WOMAN&#160;OWNED&#160;&#160;·&#160;&#160;LIVV&#160;BITES&#160;&#160;·&#160;&#160;</textPath>
+  </text>
+  <!-- olive sprig -->
+  <g transform="translate(60,30) scale(0.42)">
+    <path d="M18 51 C17.4 43 18 36 18 28 C18 22 18.4 17 18 12" fill="none" stroke="#bfa063" stroke-width="1.7" stroke-linecap="round"/>
+    <g fill="#bfa063">
+      <ellipse cx="11.5" cy="40" rx="2.1" ry="5.2" transform="rotate(-40 11.5 40)"/>
+      <ellipse cx="24.5" cy="36" rx="2.1" ry="5.2" transform="rotate(40 24.5 36)"/>
+      <ellipse cx="11" cy="30.5" rx="2" ry="5" transform="rotate(-34 11 30.5)"/>
+      <ellipse cx="25" cy="26.5" rx="2" ry="5" transform="rotate(34 25 26.5)"/>
+      <ellipse cx="18" cy="12.5" rx="1.9" ry="5" transform="rotate(5 18 12.5)"/>
+    </g>
+  </g>
+  <text x="60" y="74" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="15" letter-spacing="1.5" fill="#22402f">WOMAN</text>
+  <text x="60" y="89" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="15" letter-spacing="1.5" fill="#22402f">OWNED</text>
+</svg>
