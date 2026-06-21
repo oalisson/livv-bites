@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIVV BITES — Reviews v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ============ LIVV BITES — What Our Customers Say (v2 / wireframe) ============ */
+  :root{
+    --green-900:#122019; --green-800:#173124; --green-700:#1d3a2b; --green-600:#22402f;
+    --cream:#f4eee0; --cream-deep:#ece2cf; --beige:#efe6d2; --beige-deep:#e2d6bc;
+    --gold:#bfa063; --gold-soft:#d8c79a; --text:#22302a; --muted:#6e6657; --border:#dbd0bb;
+    --serif:"Cormorant Garamond", Georgia, serif; --sans:"Inter", system-ui, sans-serif; --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+
+  .rv{ padding:clamp(64px,9vh,120px) 0; background:var(--cream); }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 clamp(24px,5vw,72px); }
+  .rv-head{ text-align:center; margin-bottom:clamp(34px,5vh,52px); }
+  .rv-head h2{ font-family:var(--serif); font-weight:600; font-size:clamp(24px,3.2vw,36px); letter-spacing:.14em; text-transform:uppercase; color:var(--green-700); }
+  .divider{ display:flex; align-items:center; justify-content:center; gap:12px; margin-top:14px; color:var(--gold); }
+  .divider::before,.divider::after{ content:""; width:46px; height:1px; background:var(--gold); }
+  .divider span{ font-size:13px; }
+
+  .carousel{ position:relative; }
+  .rv-track{ display:flex; gap:clamp(16px,2vw,24px); overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:6px 2px; }
+  .rv-track::-webkit-scrollbar{ display:none; }
+  .rv-card{ scroll-snap-align:center; flex:0 0 calc((100% - 2*clamp(16px,2vw,24px))/3); background:var(--beige); border:1px solid var(--border); border-radius:16px; padding:30px 28px; }
+  .stars{ color:var(--gold); font-size:15px; letter-spacing:3px; }
+  .rv-card blockquote{ font-size:16px; line-height:1.6; color:var(--text); margin:16px 0 18px; }
+  .rv-card .name{ font-family:var(--serif); font-size:18px; color:var(--green-700); font-weight:600; }
+
+  .rv-arrow{ position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:#fff; border:1px solid var(--border);
+    display:grid; place-items:center; cursor:pointer; color:var(--green-700); box-shadow:0 8px 20px -10px rgba(18,32,25,.35); transition:background .3s var(--ease); z-index:2; }
+  .rv-arrow:hover{ background:var(--green-600); color:var(--cream); }
+  .rv-arrow svg{ width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2; }
+  .rv-arrow.prev{ left:-10px; } .rv-arrow.next{ right:-10px; }
+
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (max-width:880px){
+    .rv-card{ flex-basis:84%; }
+    .rv-arrow{ display:none; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;} .reveal{opacity:1;transform:none;} }
+</style>
+</head>
+<body>
+<section class="rv">
+  <div class="wrap">
+    <div class="rv-head reveal in">
+      <h2>What Our Customers Say</h2>
+      <div class="divider"><span>✦</span></div>
+    </div>
+
+    <div class="carousel reveal" data-carousel>
+      <button class="rv-arrow prev" data-prev aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="rv-track">
+        <article class="rv-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Absolutely delicious! You can taste the quality in every bite."</blockquote>
+          <div class="name">Mariana S.</div>
+        </article>
+        <article class="rv-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The bone broth version is amazing! So flavorful and satisfying."</blockquote>
+          <div class="name">Carolina A.</div>
+        </article>
+        <article class="rv-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Perfect for busy days. Quick, easy and so good!"</blockquote>
+          <div class="name">Jessica R.</div>
+        </article>
+        <article class="rv-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Finally a gluten-free snack my whole family fights over."</blockquote>
+          <div class="name">Jordan M.</div>
+        </article>
+      </div>
+      <button class="rv-arrow next" data-next aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+</body>
+</html>

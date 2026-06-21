@@ -18,13 +18,12 @@ SECTIONS = [
 
 # Versão B (/b.html) — ordem otimizada dos 10 pontos (sections novas entram aqui)
 SECTIONS_B = [
-    ("hero",    "v2/hero-v2-section.html",    "top",         None),
-    ("shop",    "v2/shop-v2-section.html",    "shop",        "Shop"),
-    ("hiw",     "how-it-works-section.html",  "how-it-works",None),
-    ("ing",     "ingredients-section.html",   "ingredients", None),
-    ("story",   "our-story-section.html",     "story",       "Our Story"),
-    ("reviews", "reviews-section.html",        "reviews",     None),
-    ("footer",  "footer-section.html",        "footer",      None),
+    ("hero",    "v2/hero-v2-section.html",         "top",          None),
+    ("shop",    "v2/shop-v2-section.html",         "shop",         "Shop"),
+    ("hiw",     "v2/how-it-works-v2-section.html", "how-it-works", None),
+    ("story",   "v2/our-story-v2-section.html",    "story",        "Our Story"),
+    ("reviews", "v2/reviews-v2-section.html",       "reviews",      None),
+    ("footer",  "v2/footer-v2-section.html",       "footer",       None),
 ]
 
 GLOBAL_SELECTORS = {":root", "*", "body", "html", "a", "body::before"}
@@ -259,6 +258,15 @@ document.querySelectorAll("[data-story-toggle]").forEach(btn=>{
   menuBtn.addEventListener("click",open);
   drawer.querySelectorAll("[data-close], .drawer-links a, .drawer-cta").forEach(el=>el.addEventListener("click",close));
 })();
+// reviews carousel (setas)
+document.querySelectorAll("[data-carousel]").forEach(c=>{
+  const track=c.querySelector(".rv-track");
+  if(!track)return;
+  const step=()=>{const card=track.querySelector(".rv-card");return card?card.offsetWidth+22:300;};
+  const prev=c.querySelector("[data-prev]"), next=c.querySelector("[data-next]");
+  prev&&prev.addEventListener("click",()=>track.scrollBy({left:-step(),behavior:"smooth"}));
+  next&&next.addEventListener("click",()=>track.scrollBy({left:step(),behavior:"smooth"}));
+});
 """
 
 mark_svg = (SITE.parent / "brand/assets/logo/livv-bites-mark.svg").read_text()
@@ -326,6 +334,7 @@ for name, fn, anchor, label in SECTIONS_B:
     sec_html_b.append(f'<section id="{anchor}" class="liv-sec scope-{name}">{body}</section>')
     if label:
         nav_b.append(f'<a href="#{anchor}">{label}</a>')
+nav_b += ['<a href="#footer">FAQ</a>', '<a href="#contact">Contact</a>']  # wireframe nav (sem seções próprias por ora)
 base_b = "\n".join(f"{pre}{{{inner}}}" for pre, inner in store_b.get("base", {}).items())
 at_b = "\n".join(store_b.get("at", {}).values())
 
