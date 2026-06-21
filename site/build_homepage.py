@@ -115,7 +115,7 @@ for name, fn, anchor, label in SECTIONS:
     # remove o <script> interno de cada seção (evita redeclaração de const no escopo
     # global); um único JS global no fim cuida de reveal + parallax de toda a página
     body = re.sub(r"<script[^>]*>.*?</script>", "", body, flags=re.S)
-    body = inline_images(body)
+    # imagens ficam como arquivos (assets/ na raiz) — cache + lazy-load, HTML leve
     sec_css.append(f"/* ===== {name} ===== */\n" + scope_css(style, f".scope-{name}", store))
     sec_html.append(f'<section id="{anchor}" class="liv-sec scope-{name}">{body}</section>')
     if label:
@@ -266,14 +266,14 @@ html = f"""<!DOCTYPE html>
 <meta property="og:title" content="LIVV BITES — Comfort food, thoughtfully made." />
 <meta property="og:description" content="Premium Brazilian cheese bread, naturally gluten-free and made with real ingredients. Frozen, baked fresh in minutes." />
 <meta property="og:url" content="https://oalisson.github.io/livv-bites/" />
-<meta property="og:image" content="https://oalisson.github.io/livv-bites/og-image.png" />
+<meta property="og:image" content="https://oalisson.github.io/livv-bites/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="LIVV BITES — Brazilian cheese bread" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="LIVV BITES — Comfort food, thoughtfully made." />
 <meta name="twitter:description" content="Premium Brazilian cheese bread, naturally gluten-free and made with real ingredients." />
-<meta name="twitter:image" content="https://oalisson.github.io/livv-bites/og-image.png" />
+<meta name="twitter:image" content="https://oalisson.github.io/livv-bites/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -295,10 +295,8 @@ html = f"""<!DOCTYPE html>
 </html>
 """
 
-out = SITE / "index.html"
-out.write_text(html)
-# também na raiz do projeto, que é o que o GitHub Pages serve
+# um único index.html na raiz (o que o GitHub Pages serve); imagens em assets/
 root_out = SITE.parent / "index.html"
 root_out.write_text(html)
 kb = len(html.encode()) / 1024
-print(f"OK -> {out}  e  {root_out}  ({kb:.0f} KB)")
+print(f"OK -> {root_out}  ({kb:.0f} KB)")
