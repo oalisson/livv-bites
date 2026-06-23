@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Bottom row circles -->
+  <circle cx="166" cy="316" r="50" fill="#ffffff" stroke="#2a3628" stroke-width="20" />
+  <circle cx="256" cy="316" r="50" fill="#ffffff" stroke="#2a3628" stroke-width="20" />
+  <circle cx="346" cy="316" r="50" fill="#ffffff" stroke="#2a3628" stroke-width="20" />
+
+  <!-- Middle row circles -->
+  <circle cx="211" cy="238" r="50" fill="#ffffff" stroke="#2a3628" stroke-width="20" />
+  <circle cx="301" cy="238" r="50" fill="#ffffff" stroke="#2a3628" stroke-width="20" />
+
+  <!-- Top circle -->
+  <circle cx="256" cy="160" r="50" fill="#ffffff" stroke="#2a3628" stroke-width="20" />
+
+  <!-- Plate/Tray at the bottom -->
+  <path d="M 80 350 L 432 350 L 432 370 Q 432 410 392 410 L 120 410 Q 80 410 80 370 Z" fill="#ffffff" stroke="#2a3628" stroke-width="20" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

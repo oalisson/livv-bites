@@ -125,13 +125,14 @@
     .iname{font-size:clamp(10px,1.2vw,13px);color:var(--text);font-weight:500;text-align:center;}
 
     /* HOW TO */
-    .how-to{display:grid;grid-template-columns:28% 44% 28%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;}
+    .how-to{display:grid;grid-template-columns:22% 25% 25% 28%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;}
     .ht-left{padding:clamp(24px,4vw,44px) 3% clamp(24px,4vw,44px) clamp(16px,5%,48px);display:flex;flex-direction:column;justify-content:center;}
     .ht-left h2{font-size:clamp(18px,2.5vw,28px);line-height:1.1;text-transform:uppercase;letter-spacing:3px;color:var(--green);margin-bottom:14px;}
     .ht-list{list-style:none;margin-bottom:20px;}
     .ht-list li{font-size:clamp(10px,1.2vw,12px);color:var(--gray);padding:4px 0;display:flex;align-items:center;gap:6px;}
     .ht-list li::before{content:"✓";color:var(--green);font-weight:600;}
-    .ht-steps{padding:clamp(24px,4vw,40px) 3%;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:center;border-left:1px solid var(--border);}
+    .ht-steps{padding:clamp(24px,4vw,40px) 2%;display:flex;flex-direction:column;gap:12px;justify-content:center;border-left:1px solid var(--border);}
+    .method-title{font-family:"Cormorant Garamond",serif;font-size:clamp(15px,1.8vw,20px);color:var(--green);margin-bottom:6px;text-align:center;text-transform:uppercase;letter-spacing:2px;font-weight:600;}
     .sc{background:#f9f5ed;border-radius:12px;padding:clamp(14px,2vw,20px) 10px;text-align:center;}
     .scircle{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:var(--green);margin:0 auto 10px;font-family:"Cormorant Garamond",serif;}
     .sc h4{font-size:clamp(10px,1.2vw,13px);color:var(--green);margin-bottom:6px;}
@@ -298,18 +299,22 @@
         margin-bottom:0;
       }
       /* 2nd: step cards */
-      .ht-o3{
-        order:2;
+      .ht-o3, .ht-o4{
         border:none;
-        grid-template-columns:1fr;
         padding:16px 5%;
         display:flex;
         flex-direction:column;
         gap:12px;
       }
+      .ht-o3{
+        order:2;
+      }
+      .ht-o4{
+        order:3;
+      }
       /* 3rd: tray photo — after steps, before OUR STORY */
       .ht-o2{
-        order:3;
+        order:4;
         min-height:240px;
         max-height:300px;
         width:100%;
@@ -541,7 +546,7 @@
     <a href="#faq">FAQ</a><a href="https://wa.me/13056761809" target="_blank">Contact</a>
   </nav>
   <div class="logo-center">
-    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDAgMjEwIj48c3R5bGU+Lmxie2ZpbGw6bm9uZTtzdHJva2U6I2I4OWI2MztzdHJva2Utd2lkdGg6MS4yO3N0cm9rZS1saW5lY2FwOnJvdW5kO30ubGZ7ZmlsbDojYjg5YjYzO2ZpbGwtb3BhY2l0eTouMTg7c3Ryb2tlOiNiODliNjM7c3Ryb2tlLXdpZHRoOjEuMTtzdHJva2UtbGluZWNhcDpyb3VuZDt9Lmxue2ZvbnQtZmFtaWx5OiJDb3Jtb3JhbnQgR2FyYW1vbmQiLCJHZW9yZ2lhIixzZXJpZjtmb250LXdlaWdodDozMDA7ZmlsbDojMWUzZDJmO2xldHRlci1zcGFjaW5nOjEwcHg7fS5sc3tmb250LWZhbWlseToiTW9udHNlcnJhdCIsIkFyaWFsIixzYW5zLXNlcmlmO2ZvbnQtd2VpZ2h0OjUwMDtmaWxsOiNiODliNjM7bGV0dGVyLXNwYWNpbmc6N3B4O308L3N0eWxlPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3MCw1MikiPjxsaW5lIHgxPSIwIiB5MT0iMzYiIHgyPSIwIiB5Mj0iLTM2IiBjbGFzcz0ibGIiLz48cGF0aCBkPSJNMCwyNiBDLTYsMjAtMTcsMTYtMjEsOEMtMTcsNC03LDEwIDAsMTYiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLDI2IEM2LDIwIDE3LDE2IDIxLDhDMTcsNCA3LDEwIDAsMTYiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLDEyIEMtNSw2LTE1LDItMTksLTZDLTE1LC0xMC01LC00IDAsNCIgY2xhc3M9ImxmIi8+PHBhdGggZD0iTTAsMTIgQzUsNiAxNSwyIDE5LC02QzE1LC0xMCA1LC00IDAsNCIgY2xhc3M9ImxmIi8+PHBhdGggZD0iTTAsLTIgQy00LC04LTEyLC0xMi0xNSwtMjBDLTExLC0yNC0zLC0xOCAwLC0xMCIgY2xhc3M9ImxmIi8+PHBhdGggZD0iTTAsLTIgQzQsLTggMTIsLTEyIDE1LC0yMEMxMSwtMjQgMywtMTggMCwtMTAiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLC0xNiBDLTIsLTIyLTgsLTI2LTEwLC0zNEMtNywtMzgtMSwtMzAgMCwtMjQiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLC0xNiBDMiwtMjIgOCwtMjYgMTAsLTM0QzcsLTM4IDEsLTMwIDAsLTI0IiBjbGFzcz0ibGYiLz48cGF0aCBkPSJNMCwtMzYgQy0xLC00Mi0zLC00NiAwLC01MEMzLC00NiAxLC00MiAwLC0zNiIgY2xhc3M9ImxmIi8+PC9nPjxsaW5lIHgxPSIxMDAiIHkxPSIxMTYiIHgyPSIyNDAiIHkyPSIxMTYiIHN0cm9rZT0iI2I4OWI2MyIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9Ii42Ii8+PHRleHQgeD0iMTcwIiB5PSIxNTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJsbiIgZm9udC1zaXplPSI0MCI+TElWViBCSVRFUzwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjE4NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImxzIiBmb250LXNpemU9IjExIj5HT1VSTUVUPC90ZXh0Pjwvc3ZnPg==" alt="LIVV BITES GOURMET" class="nav-logo"/>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDAgMTYwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkxJVlYgQklURVMg4oCUIEJyYXppbGlhbiBjaGVlc2UgYnJlYWQsIGVsZXZhdGVkIj4KICA8c3R5bGU+CiAgICBAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1Db3Jtb3JhbnQrR2FyYW1vbmQ6d2dodEA0MDA7NTAwJmFtcDtkaXNwbGF5PXN3YXAnKTsKICAgIC53bXtmb250LWZhbWlseTonQ29ybW9yYW50IEdhcmFtb25kJyxHZW9yZ2lhLHNlcmlmO2ZvbnQtd2VpZ2h0OjUwMDt9CiAgICAuc3Vie2ZvbnQtZmFtaWx5OidDb3Jtb3JhbnQgR2FyYW1vbmQnLEdlb3JnaWEsc2VyaWY7Zm9udC13ZWlnaHQ6NDAwO30KICA8L3N0eWxlPgogIDwhLS0gb2xpdmUgc3ByaWcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTU5LDQpIHNjYWxlKDAuNjQpIj4KICAgIDxwYXRoIGQ9Ik0xOCA1MSBDMTcuNCA0MyAxOCAzNiAxOCAyOCBDMTggMjIgMTguNCAxNyAxOCAxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYmZhMDYzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8ZyBmaWxsPSIjYmZhMDYzIj4KICAgICAgPGVsbGlwc2UgY3g9IjExLjUiIGN5PSI0MCIgcng9IjIuMSIgcnk9IjUuMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTQwIDExLjUgNDApIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIyNC41IiBjeT0iMzYiIHJ4PSIyLjEiIHJ5PSI1LjIiIHRyYW5zZm9ybT0icm90YXRlKDQwIDI0LjUgMzYpIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIxMSIgY3k9IjMwLjUiIHJ4PSIyIiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTM0IDExIDMwLjUpIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIyNSIgY3k9IjI2LjUiIHJ4PSIyIiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMzQgMjUgMjYuNSkiLz4KICAgICAgPGVsbGlwc2UgY3g9IjEyLjIiIGN5PSIyMS41IiByeD0iMS45IiByeT0iNC42IiB0cmFuc2Zvcm09InJvdGF0ZSgtMjkgMTIuMiAyMS41KSIvPgogICAgICA8ZWxsaXBzZSBjeD0iMjMuOCIgY3k9IjE4LjUiIHJ4PSIxLjkiIHJ5PSI0LjYiIHRyYW5zZm9ybT0icm90YXRlKDI5IDIzLjggMTguNSkiLz4KICAgICAgPGVsbGlwc2UgY3g9IjE4IiBjeT0iMTIuNSIgcng9IjEuOSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDUgMTggMTIuNSkiLz4KICAgIDwvZz4KICAgIDxnIGZpbGw9IiNhOTc5NGYiPjxjaXJjbGUgY3g9IjE1LjgiIGN5PSI0Mi41IiByPSIxLjUiLz48Y2lyY2xlIGN4PSIyMC42IiBjeT0iMzguNSIgcj0iMS41Ii8+PC9nPgogIDwvZz4KICA8IS0tIHdvcmRtYXJrIC0tPgogIDx0ZXh0IGNsYXNzPSJ3bSIgeD0iMTczIiB5PSIxMDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDQiIGxldHRlci1zcGFjaW5nPSI4IiBmaWxsPSIjMWUzZDJmIj5MSVZWIEJJVEVTPC90ZXh0PgogIDx0ZXh0IGNsYXNzPSJzdWIiIHg9IjE3MCIgeT0iMTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0LjUiIGxldHRlci1zcGFjaW5nPSIxcHgiIGZpbGw9IiMyYTM2MjgiPkJyYXppbGlhbiBjaGVlc2UgYnJlYWQsIGVsZXZhdGVkPC90ZXh0Pgo8L3N2Zz4K" alt="LIVV BITES" class="nav-logo"/>
   </div>
   <div class="nav-right">
     <div class="nav-icons">
@@ -684,7 +689,7 @@
       <span class="inum">2</span><span class="iname">Real Cheese</span>
     </div>
     <div class="ing ing-float">
-      <img src="assets/ingredients/food.png" class="iico" alt="Organic Eggs" />
+      <img src="assets/ingredients/food.svg" class="iico" alt="Organic Eggs" />
       <span class="inum">3</span><span class="iname">Organic Eggs</span>
     </div>
     <div class="ing ing-float">
@@ -712,14 +717,28 @@
     <ul class="ht-list"><li>No thawing required</li><li>Bake straight from frozen</li><li>Ready in about 25 minutes</li></ul>
     <a href="#ht-steps" class="btn btn-outline btn-sm">How to Bake</a>
   </div>
-  <div class="ht-steps ht-o3" id="ht-steps">
+  <div class="ht-steps ht-o3" id="ht-steps-oven">
+    <h3 class="method-title">Oven</h3>
     <div class="sc"><div class="scircle">1</div><h4>Preheat Oven</h4>
       <svg class="sico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-5 5.5-5 10a5 5 0 0 0 10 0C17 7.5 12 2 12 2z"/><path d="M9 16c0 1.7 1.3 3 3 3s3-1.3 3-3"/></svg>
-      <p>Preheat to 375°F (190°C).</p></div>
+      <p>Preheat to 370°F (188°C).</p></div>
     <div class="sc"><div class="scircle">2</div><h4>Bake</h4>
       <svg class="sico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v4"/><path d="M17 4v4"/><rect x="6" y="11" width="12" height="6" rx="1"/></svg>
       <p>Place frozen bites on a baking sheet.</p></div>
-    <div class="sc"><div class="scircle">3</div><h4>Bake 20–25 min until golden.</h4>
+    <div class="sc"><div class="scircle">3</div><h4>Bake 25–30 min until golden.</h4>
+      <svg class="sico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M9.5 15a3.5 3.5 0 0 0 5 0"/></svg>
+      <p>Enjoy</p></div>
+  </div>
+  
+  <div class="ht-steps ht-o4" id="ht-steps-airfryer">
+    <h3 class="method-title">Air Fryer</h3>
+    <div class="sc"><div class="scircle">1</div><h4>Preheat Fryer</h4>
+      <svg class="sico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-5 5.5-5 10a5 5 0 0 0 10 0C17 7.5 12 2 12 2z"/><path d="M9 16c0 1.7 1.3 3 3 3s3-1.3 3-3"/></svg>
+      <p>Preheat to 350°F (177°C).</p></div>
+    <div class="sc"><div class="scircle">2</div><h4>Air Fry</h4>
+      <svg class="sico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 7h8M9 11c1 1.5 5 1.5 6 0"/></svg>
+      <p>Place frozen bites in the basket.</p></div>
+    <div class="sc"><div class="scircle">3</div><h4>Fry 20–25 min until golden.</h4>
       <svg class="sico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M9.5 15a3.5 3.5 0 0 0 5 0"/></svg>
       <p>Enjoy</p></div>
   </div>
@@ -767,7 +786,7 @@
 
 <!-- FOOTER -->
 <footer id="contact">
-  <div class="fb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDAgMjEwIj48c3R5bGU+Lmxie2ZpbGw6bm9uZTtzdHJva2U6I2I4OWI2MztzdHJva2Utd2lkdGg6MS4yO3N0cm9rZS1saW5lY2FwOnJvdW5kO30ubGZ7ZmlsbDojYjg5YjYzO2ZpbGwtb3BhY2l0eTouMTg7c3Ryb2tlOiNiODliNjM7c3Ryb2tlLXdpZHRoOjEuMTtzdHJva2UtbGluZWNhcDpyb3VuZDt9Lmxue2ZvbnQtZmFtaWx5OiJDb3Jtb3JhbnQgR2FyYW1vbmQiLCJHZW9yZ2lhIixzZXJpZjtmb250LXdlaWdodDozMDA7ZmlsbDojZjVmMGU4O2xldHRlci1zcGFjaW5nOjEwcHg7fS5sc3tmb250LWZhbWlseToiTW9udHNlcnJhdCIsIkFyaWFsIixzYW5zLXNlcmlmO2ZvbnQtd2VpZ2h0OjUwMDtmaWxsOiNiODliNjM7bGV0dGVyLXNwYWNpbmc6N3B4O308L3N0eWxlPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3MCw1MikiPjxsaW5lIHgxPSIwIiB5MT0iMzYiIHgyPSIwIiB5Mj0iLTM2IiBjbGFzcz0ibGIiLz48cGF0aCBkPSJNMCwyNiBDLTYsMjAtMTcsMTYtMjEsOEMtMTcsNC03LDEwIDAsMTYiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLDI2IEM2LDIwIDE3LDE2IDIxLDhDMTcsNCA3LDEwIDAsMTYiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLDEyIEMtNSw2LTE1LDItMTksLTZDLTE1LC0xMC01LC00IDAsNCIgY2xhc3M9ImxmIi8+PHBhdGggZD0iTTAsMTIgQzUsNiAxNSwyIDE5LC02QzE1LC0xMCA1LC00IDAsNCIgY2xhc3M9ImxmIi8+PHBhdGggZD0iTTAsLTIgQy00LC04LTEyLC0xMi0xNSwtMjBDLTExLC0yNC0zLC0xOCAwLC0xMCIgY2xhc3M9ImxmIi8+PHBhdGggZD0iTTAsLTIgQzQsLTggMTIsLTEyIDE1LC0yMEMxMSwtMjQgMywtMTggMCwtMTAiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLC0xNiBDLTIsLTIyLTgsLTI2LTEwLC0zNEMtNywtMzgtMSwtMzAgMCwtMjQiIGNsYXNzPSJsZiIvPjxwYXRoIGQ9Ik0wLC0xNiBDMiwtMjIgOCwtMjYgMTAsLTM0QzcsLTM4IDEsLTMwIDAsLTI0IiBjbGFzcz0ibGYiLz48cGF0aCBkPSJNMCwtMzYgQy0xLC00Mi0zLC00NiAwLC01MEMzLC00NiAxLC00MiAwLC0zNiIgY2xhc3M9ImxmIi8+PC9nPjxsaW5lIHgxPSIxMDAiIHkxPSIxMTYiIHgyPSIyNDAiIHkyPSIxMTYiIHN0cm9rZT0iI2I4OWI2MyIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9Ii42Ii8+PHRleHQgeD0iMTcwIiB5PSIxNTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJsbiIgZm9udC1zaXplPSI0MCI+TElWViBCSVRFUzwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjE4NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImxzIiBmb250LXNpemU9IjExIj5HT1VSTUVUPC90ZXh0Pjwvc3ZnPg==" alt="LIVV BITES GOURMET" class="foot-logo"/></div>
+  <div class="fb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDAgMTYwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkxJVlYgQklURVMg4oCUIEJyYXppbGlhbiBjaGVlc2UgYnJlYWQsIGVsZXZhdGVkIj4KICA8c3R5bGU+CiAgICBAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1Db3Jtb3JhbnQrR2FyYW1vbmQ6d2dodEA0MDA7NTAwJmFtcDtkaXNwbGF5PXN3YXAnKTsKICAgIC53bXtmb250LWZhbWlseTonQ29ybW9yYW50IEdhcmFtb25kJyxHZW9yZ2lhLHNlcmlmO2ZvbnQtd2VpZ2h0OjUwMDt9CiAgICAuc3Vie2ZvbnQtZmFtaWx5OidDb3Jtb3JhbnQgR2FyYW1vbmQnLEdlb3JnaWEsc2VyaWY7Zm9udC13ZWlnaHQ6NDAwO30KICA8L3N0eWxlPgogIDwhLS0gb2xpdmUgc3ByaWcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTU5LDQpIHNjYWxlKDAuNjQpIj4KICAgIDxwYXRoIGQ9Ik0xOCA1MSBDMTcuNCA0MyAxOCAzNiAxOCAyOCBDMTggMjIgMTguNCAxNyAxOCAxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDhjNzlhIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8ZyBmaWxsPSIjZDhjNzlhIj4KICAgICAgPGVsbGlwc2UgY3g9IjExLjUiIGN5PSI0MCIgcng9IjIuMSIgcnk9IjUuMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTQwIDExLjUgNDApIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIyNC41IiBjeT0iMzYiIHJ4PSIyLjEiIHJ5PSI1LjIiIHRyYW5zZm9ybT0icm90YXRlKDQwIDI0LjUgMzYpIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIxMSIgY3k9IjMwLjUiIHJ4PSIyIiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTM0IDExIDMwLjUpIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIyNSIgY3k9IjI2LjUiIHJ4PSIyIiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMzQgMjUgMjYuNSkiLz4KICAgICAgPGVsbGlwc2UgY3g9IjEyLjIiIGN5PSIyMS41IiByeD0iMS45IiByeT0iNC42IiB0cmFuc2Zvcm09InJvdGF0ZSgtMjkgMTIuMiAyMS41KSIvPgogICAgICA8ZWxsaXBzZSBjeD0iMjMuOCIgY3k9IjE4LjUiIHJ4PSIxLjkiIHJ5PSI0LjYiIHRyYW5zZm9ybT0icm90YXRlKDI5IDIzLjggMTguNSkiLz4KICAgICAgPGVsbGlwc2UgY3g9IjE4IiBjeT0iMTIuNSIgcng9IjEuOSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDUgMTggMTIuNSkiLz4KICAgIDwvZz4KICAgIDxnIGZpbGw9IiNiZmEwNjMiPjxjaXJjbGUgY3g9IjE1LjgiIGN5PSI0Mi41IiByPSIxLjUiLz48Y2lyY2xlIGN4PSIyMC42IiBjeT0iMzguNSIgcj0iMS41Ii8+PC9nPgogIDwvZz4KICA8IS0tIHdvcmRtYXJrIC0tPgogIDx0ZXh0IGNsYXNzPSJ3bSIgeD0iMTczIiB5PSIxMDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDQiIGxldHRlci1zcGFjaW5nPSI4IiBmaWxsPSIjZjRlZWUwIj5MSVZWIEJJVEVTPC90ZXh0PgogIDx0ZXh0IGNsYXNzPSJzdWIiIHg9IjE3MCIgeT0iMTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0LjUiIGxldHRlci1zcGFjaW5nPSIxcHgiIGZpbGw9IiNkOGM3OWEiPkJyYXppbGlhbiBjaGVlc2UgYnJlYWQsIGVsZXZhdGVkPC90ZXh0Pgo8L3N2Zz4K" alt="LIVV BITES" class="foot-logo"/></div>
   <div>
     <h5>Quick Links</h5>
     <a href="#shop">Shop</a>

@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 152" role="img" aria-label="LIVV BITES Gourmet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 160" role="img" aria-label="LIVV BITES — Brazilian cheese bread, elevated">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;display=swap');
     .wm{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;}
-    .sub{font-family:'Inter',Helvetica,Arial,sans-serif;font-weight:600;}
+    .sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;}
   </style>
   <!-- olive sprig -->
   <g transform="translate(159,4) scale(0.64)">
@@ -19,6 +19,6 @@
     <g fill="#a9794f"><circle cx="15.8" cy="42.5" r="1.5"/><circle cx="20.6" cy="38.5" r="1.5"/></g>
   </g>
   <!-- wordmark -->
-  <text class="wm" x="174" y="100" text-anchor="middle" font-size="47" letter-spacing="11" fill="#22402f">LIVV BITES</text>
-  <text class="sub" x="175" y="128" text-anchor="middle" font-size="12" letter-spacing="11.5" fill="#bfa063">GOURMET</text>
+  <text class="wm" x="173" y="104" text-anchor="middle" font-size="44" letter-spacing="8" fill="#1e3d2f">LIVV BITES</text>
+  <text class="sub" x="170" y="138" text-anchor="middle" font-size="14.5" letter-spacing="1px" fill="#2a3628">Brazilian cheese bread, elevated</text>
 </svg>

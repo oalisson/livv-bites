@@ -151,7 +151,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px;}
 .site-brand{display:inline-flex;flex-direction:column;align-items:center;line-height:1;}
 .site-brand .w{display:flex;margin:0 0 5px .17em;}
 .site-brand .m{font-family:var(--serif);font-weight:500;font-size:27px;letter-spacing:.34em;color:var(--green-700);padding-left:.34em;}
-.site-brand .s{font-size:9px;letter-spacing:.46em;color:var(--gold);margin-top:6px;padding-left:.46em;}
+.site-brand .s{font-family:var(--serif);font-size:11px;letter-spacing:.02em;color:var(--gold);margin-top:5px;padding-left:0;}
 .site-actions{display:flex;gap:20px;justify-content:flex-end;align-items:center;color:var(--green-700);}
 .site-actions svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;}
 .site-cart{position:relative;}
@@ -192,7 +192,7 @@ def make_header(nav_links):
 <header class="site-header">
   <div class="site-nav">
     <div class="site-links">{''.join(nav_links)}</div>
-    <a href="#top" class="site-brand"><span class="w"><svg viewBox="7 7 22 44" width="14" height="27" xmlns="http://www.w3.org/2000/svg"><path d="M18 51 C17.4 43 18 36 18 28 C18 22 18.4 17 18 12" fill="none" stroke="#bfa063" stroke-width="1.8" stroke-linecap="round"/><g fill="#bfa063"><ellipse cx="11.5" cy="40" rx="2.1" ry="5.2" transform="rotate(-40 11.5 40)"/><ellipse cx="24.5" cy="36" rx="2.1" ry="5.2" transform="rotate(40 24.5 36)"/><ellipse cx="11" cy="30.5" rx="2" ry="5" transform="rotate(-34 11 30.5)"/><ellipse cx="25" cy="26.5" rx="2" ry="5" transform="rotate(34 25 26.5)"/><ellipse cx="12.2" cy="21.5" rx="1.9" ry="4.6" transform="rotate(-29 12.2 21.5)"/><ellipse cx="23.8" cy="18.5" rx="1.9" ry="4.6" transform="rotate(29 23.8 18.5)"/><ellipse cx="18" cy="12.5" rx="1.9" ry="5" transform="rotate(5 18 12.5)"/></g><g fill="#a9794f"><circle cx="15.8" cy="42.5" r="1.5"/><circle cx="20.6" cy="38.5" r="1.5"/></g></svg></span><span class="m">LIVV BITES</span><span class="s">GOURMET</span></a>
+    <a href="#top" class="site-brand"><span class="w"><svg viewBox="7 7 22 44" width="14" height="27" xmlns="http://www.w3.org/2000/svg"><path d="M18 51 C17.4 43 18 36 18 28 C18 22 18.4 17 18 12" fill="none" stroke="#bfa063" stroke-width="1.8" stroke-linecap="round"/><g fill="#bfa063"><ellipse cx="11.5" cy="40" rx="2.1" ry="5.2" transform="rotate(-40 11.5 40)"/><ellipse cx="24.5" cy="36" rx="2.1" ry="5.2" transform="rotate(40 24.5 36)"/><ellipse cx="11" cy="30.5" rx="2" ry="5" transform="rotate(-34 11 30.5)"/><ellipse cx="25" cy="26.5" rx="2" ry="5" transform="rotate(34 25 26.5)"/><ellipse cx="12.2" cy="21.5" rx="1.9" ry="4.6" transform="rotate(-29 12.2 21.5)"/><ellipse cx="23.8" cy="18.5" rx="1.9" ry="4.6" transform="rotate(29 23.8 18.5)"/><ellipse cx="18" cy="12.5" rx="1.9" ry="5" transform="rotate(5 18 12.5)"/></g><g fill="#a9794f"><circle cx="15.8" cy="42.5" r="1.5"/><circle cx="20.6" cy="38.5" r="1.5"/></g></svg></span><span class="m">LIVV BITES</span><span class="s">Brazilian cheese bread, elevated</span></a>
     <div class="site-actions">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
