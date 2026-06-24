@@ -861,13 +861,18 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartBadge();
 });
 
-/* FLIP TOUCH */
-document.querySelectorAll('.flip-card').forEach(card=>{
-  card.addEventListener('click',()=>{
-    if(window.matchMedia('(hover:none)').matches){
-      card.classList.toggle('flipped');
+/* FLIP TOUCH & CLICK OUTSIDE / INTERACTION */
+document.addEventListener('click', (e) => {
+  if (!window.matchMedia('(hover:none)').matches) return;
+  const clickedCard = e.target.closest('.flip-card');
+  document.querySelectorAll('.flip-card').forEach(card => {
+    if (card !== clickedCard) {
+      card.classList.remove('flipped');
     }
   });
+  if (clickedCard) {
+    clickedCard.classList.toggle('flipped');
+  }
 });
 
 /* STRIPE CHECKOUT
