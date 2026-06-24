@@ -638,7 +638,7 @@
             <button onclick="changeQty('qty1',1)">+</button>
           </div>
         </div>
-        <button class="stripe-btn" id="btn1" onclick="checkout('traditional')" disabled>
+        <button class="stripe-btn" id="btn1" onclick="checkout('traditional')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           <span class="label">Buy Now</span>
           <span class="loading">Processing…</span>
@@ -674,7 +674,7 @@
             <button onclick="changeQty('qty2',1)">+</button>
           </div>
         </div>
-        <button class="stripe-btn" id="btn2" onclick="checkout('bonebroth')" disabled>
+        <button class="stripe-btn" id="btn2" onclick="checkout('bonebroth')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           <span class="label">Buy Now</span>
           <span class="loading">Processing…</span>
@@ -849,10 +849,6 @@ function updateCartBadge(){
   if(badge){
     badge.innerText = total;
   }
-  const btn1 = document.getElementById('btn1');
-  const btn2 = document.getElementById('btn2');
-  if(btn1) btn1.disabled = (qty1 === 0);
-  if(btn2) btn2.disabled = (qty2 === 0);
 }
 
 function changeQty(id,delta){
@@ -888,10 +884,14 @@ function checkout(product){
   const btnId = product==='traditional' ? 'btn1' : 'btn2';
   const qtyId = product==='traditional' ? 'qty1' : 'qty2';
   const btn   = document.getElementById(btnId);
-  const qty   = parseInt(document.getElementById(qtyId).value)||0;
+  let qty     = parseInt(document.getElementById(qtyId).value)||0;
   const link  = PAYMENT_LINKS[product];
 
-  if(qty <= 0) return;
+  if(qty <= 0){
+    qty = 1;
+    document.getElementById(qtyId).value = 1;
+    updateCartBadge();
+  }
   if(!link||link.includes('YOUR_')){
     alert('⚠️ Configure your Stripe Payment Links in the HTML file.');
     return;
